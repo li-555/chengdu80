@@ -1,0 +1,213 @@
+# Platform Capability Proposal | 平台能力方案
+
+- Team / 团队：Team HKU
+- Platform / 平台：[PLATFORM NAME — DECIDE BEFORE UPLOAD / 平台名称——上传前确定]
+
+## 1. Platform Vision | 平台愿景
+
+Most people who work with financial data cannot build software. They have precise ideas — *"tell me every morning which of the companies I follow published something unusual overnight"* — and no way to turn such an idea into something that actually runs.
+
+多数金融数据使用者不会开发软件。他们有明确的想法——*"每天早上告诉我，我关注的公司里哪些在隔夜发布了异常公告"*——却没有办法把它变成真正可运行的东西。
+
+The usual answer is to ask an engineer and wait. The new answer is to ask an AI to write the code. But that leaves the person holding a folder of program files. Someone still has to put them on a machine, make them run at 08:00 tomorrow, notice when they break, and repair them when the data changes. For someone who cannot code, that is a wall. For someone who can, it is still an afternoon of work for every idea they have.
+
+通常的做法是找工程师并排队等待；新的做法是让 AI 写代码。但后者只是把一堆程序文件交给用户。仍然需要有人把文件放到机器上、让它明天 08:00 运行、在出错时发现问题、在数据变化时修复。对不会写代码的人，这是一道墙；对会写代码的人，每一个想法仍然要花掉一个下午。
+
+Our platform removes that gap. A person describes an idea in ordinary language and receives a small application that **is already running on the platform**. There is nothing to install, nothing to deploy, no server, and no code to read.
+
+本平台消除这一环节。用户用自然语言描述想法，得到的是**已经在平台上运行**的应用。无需安装、无需部署、不需要服务器，也不需要阅读代码。
+
+This is possible because of one design decision: **an application on our platform is not a program — it is a document.** A document that states four things: what data it needs, what to work out, when to run, and what to show. The platform already knows how to read such a document and carry it out. Nothing is compiled and nothing is deployed, because the component that does the work is already installed; the application is only instructions for it.
+
+这一点源于一个设计决定：**平台上的应用不是程序，而是一份文档。** 该文档声明四件事：需要什么数据、要计算什么、何时运行、展示什么。平台本身具备读取并执行该文档的能力。没有编译、没有部署，因为真正执行工作的组件已经安装完成，应用只是给它的指令。
+
+Three consequences follow, and together they are what make this a platform rather than a code generator. **It can be checked before it runs:** because an application is structured data rather than free-form code, the platform inspects it against its published specification, states precisely what is wrong, and has it corrected before anything executes — which is what makes AI-generated applications reliable rather than lucky. **It keeps running by itself:** an application can run every trading day at market close, indefinitely, and every run is recorded. **It can be handed to someone else:** the document is one small file carrying no data, only a description of the data it needs, so giving an application to a colleague is sending one file, and it runs on their data rather than yours.
+
+由此产生三个结果，它们共同使之成为平台而非代码生成器。**可在运行前校验：** 应用是结构化数据而非自由格式代码，平台可依据已发布规范检查，准确指出问题所在，并在执行前完成修正——这使 AI 生成的应用可靠，而非依赖运气。**可自行持续运行：** 应用可在每个交易日收盘后长期自动运行，每次运行均有记录。**可交付给他人：** 文档是一个小文件，不含数据，只描述所需数据；把应用交给同事就是发送一个文件，它在对方的数据上运行，而不是你的数据上。
+
+### Who this is for | 面向谁
+
+**The domain expert inside a financial organisation** — research analysts, investment advisers, portfolio managers, risk and compliance staff, corporate finance teams. They know exactly what they want to look at and have no way to build it. They are the primary user. **The developer or quantitative analyst in that same organisation**, for whom the platform is leverage: assemble a tool in an hour instead of a week, and write new building blocks when the library lacks something. **The serious individual investor**, managing their own money deliberately, who wants their own monitoring rather than a generic app's notifications. **And one user that is not a person: an AI model that is not ours.** The platform publishes a machine-readable specification precisely so that an external model can produce a valid application against it, which the platform then validates, imports and runs like any other. This is a first-class use of the platform, not an afterthought.
+
+**金融机构内部的业务专家**——研究分析师、投资顾问、组合经理、风险与合规人员、公司金融团队。他们清楚自己要看什么，却没有办法把它做出来，是平台的主要用户。**同一机构内的开发者或量化分析师**，平台对他们是效率杠杆：一小时而非一周完成一个工具，并可在函数库不足时编写新的构建块。**认真管理自有资金的个人投资者**，希望拥有自己的监控逻辑，而不是通用应用的统一提醒。**以及一类并非自然人的用户：非本平台的 AI 模型。** 平台发布机器可读规范，正是为了让外部模型据此生成合规应用，再由平台校验、导入并与其他应用一样运行。这是平台的首要用途之一，而非附带功能。
+
+### What people build with it | 可以用它做什么
+
+**Screens** — rank and filter the market by stated conditions. **Monitors that run themselves** — a watchlist reporting each trading morning what moved beyond a threshold; a warning when borrowing against shares in a sector rises unusually fast; a convertible bond approaching forced redemption; a reminder before each new share subscription opens. **Comparisons** — several companies' valuation and profitability side by side, or whether three funds quietly hold the same things. **Trackers for events particular to this market** — which stocks reached their price limit and how quickly; which brokerage branches appeared in large-trade disclosure. **Explanations, with AI working inside the application** — a morning digest summarising overnight filings for a watchlist and marking the serious ones.
+
+**筛选** ——按用户声明的条件对市场排序与过滤。**自动运行的监控** ——每个交易日早晨报告自选股中超过阈值的变动；某行业股票质押融资异常上升时预警；可转债接近强制赎回；新股申购开始前提醒。**对比** ——多家公司估值与盈利能力并列比较，或三只基金是否实际持有相同标的。**本市场特有事件的跟踪** ——哪些股票涨跌停、封板速度如何；哪些券商营业部出现在大宗交易披露中。**解释类应用，AI 在应用内部工作** ——每日早报汇总自选股隔夜公告并标记其中的重要项。
+
+Almost none of these are worth having as a one-off answer. They are worth having because they run again tomorrow, and the day after, without anyone remembering to ask.
+
+这些几乎都不是一次性答案的价值。它们的价值在于明天、后天继续运行，而无需有人记得去提问。
+
+### Why an organisation adopts it | 机构为何采用
+
+Inside a financial organisation this is the same problem at scale. An analyst wants a small tool; the request goes to the technology department; the queue is measured in months and is full of larger systems. So the tool is never built. Multiply that by a few hundred analysts and the organisation is carrying hundreds of small, genuinely valuable tools that will never exist.
+
+在金融机构内部，这是同一问题的规模化版本。分析师需要一个小工具，需求提交技术部门，排期以月计并且已被更大的系统占满，于是这个工具永远不会被做出来。乘以数百名分析师，机构就背负着数百个真正有价值却永远不存在的小工具。
+
+Asking an AI to write the code does not solve this inside an organisation, for three reasons unrelated to how good the AI is. Nobody operates the result — generated code still needs hosting, scheduling, monitoring and repair, and no one is assigned to that. The organisation's data is usually not permitted to leave its own systems for an outside service. And when a tool touches client money or client data, the organisation must be able to show what it does, who approved it, and that it has not silently changed.
+
+在机构环境中，让 AI 写代码并不能解决问题，原因有三，且与 AI 能力无关。没有人运维结果——生成的代码仍需托管、调度、监控与修复，而没有人被指派承担。机构数据通常不允许离开自有系统交给外部服务。并且当工具涉及客户资金或客户数据时，机构必须能够说明它做了什么、谁批准、以及它没有被悄然改动。
+
+The platform is built for exactly those three constraints. It installs and runs inside the organisation's own environment with a single command. Applications are assembled only from building blocks reviewed once, so what any application can do is bounded and inspectable, and every run is recorded. The organisation's own files — spreadsheets, exports, internal datasets — are registered into the platform's data catalogue and used like any other data, and the model that generates applications sees only the catalogue's field names and types, never the rows themselves. And the capability accumulates: because an application is one small file carrying no data, one person's work runs on a colleague's data unchanged, so the organisation builds a library of tools its own staff created instead of losing each one when its author moves on.
+
+平台正是针对这三项约束构建。它通过单条命令安装并运行在机构自有环境中。应用只能由经过一次审查的构建块组装，因此任何应用的能力边界明确且可检查，每次运行均有记录。机构自有文件——表格、导出数据、内部数据集——注册进平台数据目录后与其他数据同等使用，而生成应用的模型只看到目录中的字段名与类型，不接触数据内容。能力还会累积：应用是不含数据的单个小文件，一个人的成果可以不加修改地在同事的数据上运行，机构由此积累一套由自己员工创建的工具库，而不是在作者离职时逐个失去。
+
+### What the platform does not do | 平台不做什么
+
+The platform removes the barrier between having a financial idea and having a working application. It does not supply the idea, and it does not supply the judgement. Someone still has to know which forty companies are worth watching, which filing clauses are the dangerous ones, and what a result means once it appears. An application built on a careless question will answer that careless question precisely and promptly.
+
+平台消除的是"有想法"与"有可运行应用"之间的障碍。它不提供想法，也不提供判断。仍然需要有人知道哪四十家公司值得关注、公告中哪些条款是危险信号、以及结果出现后意味着什么。基于草率问题构建的应用，会准确且及时地回答那个草率的问题。
+
+This is not a limitation we apologise for; it is the reason the platform is worth building. Writing code was never the scarce skill — the hard part was always deciding what should exist, what to measure, what to ignore, and when an answer is wrong. That work is judgement, and it belongs to the person who understands the domain, which is precisely who has been locked out. We are also not claiming to make AI better at finance. We assume the models will keep improving. We are building the part that is still missing once the model has already done a good job: somewhere for the result to live, run, be checked, be governed, and be shared.
+
+这不是需要致歉的局限，而是平台值得构建的理由。写代码从来不是稀缺能力——真正困难的始终是判断什么应该存在、衡量什么、忽略什么、以及何时答案是错的。这属于理解业务的人，而恰恰是这些人一直被挡在门外。我们也不声称让 AI 更懂金融。我们假定模型会持续进步，我们构建的是模型做好本职之后仍然缺失的那一部分：让结果有地方存续、运行、被校验、被管理、被共享。
+
+## 2. User Experience | 用户体验
+
+A worked example, start to finish. / 一个完整示例。
+
+**An analyst follows about forty companies.** Every morning she skims their filings for anything that matters. It takes half an hour and she sometimes misses things.
+**一位分析师关注约四十家公司。** 她每天早上浏览这些公司的公告，耗时半小时，且偶有遗漏。
+
+**She describes it.** She types: *"Every trading morning before the market opens, check my forty companies for new filings, summarise them, and flag anything that looks serious."*
+**她描述需求。** 她输入：*"每个交易日开盘前，检查我这四十家公司的新公告，做摘要，并标记其中重要的内容。"*
+
+**The platform asks what it needs to.** Which forty companies? It offers to take a spreadsheet. She uploads a CSV she already keeps. The platform reads it, reports what it found — one column of company codes, forty rows, no blanks — and registers it as her own dataset.
+**平台提出必要的问题。** 是哪四十家公司？平台可接受表格文件。她上传一份已有的 CSV。平台读取后报告识别结果——一列公司代码、四十行、无空值——并将其注册为她的数据集。
+
+**An application appears, and she is told in plain words what it will do** before anything runs: *"Each trading day at 08:00, this will look for filings published since the previous trading day for the 40 companies in your list, summarise each one, mark any concerning debt, guarantees or shareholder sales as serious, and show a grouped digest."* She is never required to understand how it is built; if she wants to look underneath, she can.
+**应用生成，并在运行前以自然语言告知其行为**：*"每个交易日 08:00，查找名单中 40 家公司自上一交易日以来发布的公告，逐条摘要，将涉及债务、担保或股东减持的重要项标记出来，并按分组展示。"* 她无需理解应用如何构建；若她想查看内部细节，也可以查看。
+
+**It runs.** She sees the result immediately, and again tomorrow at 08:00 without opening anything.
+**应用运行。** 她立即看到结果，次日 08:00 再次得到结果，无需打开任何程序。
+
+**She changes it without rebuilding it.** The list of companies is an input to the application, not part of its structure. She adds two names; the same application now covers forty-two.
+**她无需重建即可修改。** 公司名单是应用的输入，而非其结构的一部分。她新增两家公司，同一应用即覆盖四十二家。
+
+**She gives it to a colleague.** One file. He imports it. The platform reads what the application requires — the market filings data, which the platform already provides, and a list of companies, which it does not have for him. It asks him for one: he uploads his own, or points at a dataset he already has and maps his column names to the ones the application expects. The application then runs on *his* companies. Her list never left her account.
+**她把应用交给同事。** 一个文件。对方导入后，平台读取应用声明的数据需求——市场公告数据平台已提供，而公司名单对他尚不存在。平台要求他提供：上传自己的名单，或指向他已有的数据集并将列名映射到应用期望的字段。应用随后在*他的*公司名单上运行。她的名单从未离开她的账户。
+
+**If it cannot be built, she is told why.** Generation that produces an invalid application is not shown to her as a failure to interpret — the platform reports exactly which part is invalid and corrects it. If something genuinely cannot be expressed within the platform's supported scope, she is told so plainly rather than handed a broken application.
+**若无法构建，她会被告知原因。** 生成出不合规应用不会以"未理解需求"的形式呈现给她——平台准确报告哪一部分不合规并进行修正。若某项需求确实超出平台已声明的支持范围，平台明确说明，而不是交付一个无法运行的应用。
+
+There are two other ways in, for two other kinds of user. A **developer** can write the document directly, or edit one the platform generated, using the published specification. An **AI model that is not ours** can read that same published specification and produce a valid application outside the platform, which is then validated, imported and run exactly like any other. This is deliberate, and it is the capability the platform is most carefully designed around: the specification is machine-readable and generated from the platform's own code, the validity check is available as a standalone facility, and import is the same path whether an application came from us, from a developer, or from another model.
+
+另有两条入口，面向另两类用户。**开发者**可依据已发布规范直接编写该文档，或修改平台生成的文档。**非本平台的 AI 模型**可读取同一份已发布规范，在平台之外生成合规应用，再经校验、导入并与其他应用一样运行。这是有意的设计，也是平台最着力支持的能力：规范机器可读且由平台代码自动生成，校验功能可独立调用，导入路径对平台生成、开发者编写、外部模型生成的应用完全相同。
+
+## 3. Platform Capabilities | 平台能力
+
+### 3.1 Data access and binding | 数据接入与绑定
+
+One catalogue covers everything an application can read: the market and company data the platform provides, and any data the operator or an individual user registers themselves — CSV, XLSX and other tabular files. The catalogue exposes each dataset's fields, types, and the provenance, unit and time-coverage information available for it. Applications are written against the catalogue, never against a particular source, so an application does not care where its data came from. An application declares the data it requires and the shape it must be in, rather than containing any data; on import the platform reports which requirements are already satisfied and lets the user bind a dataset and map fields for the rest, checking required fields and type compatibility. No user needs an account or key with a data provider, and no credential ever appears inside an application or an exported file.
+
+统一数据目录覆盖应用可读取的全部数据：平台已接入的市场与公司数据，以及运营方或个人用户自行注册的数据——CSV、XLSX 及其他表格文件。目录展示每个数据集的字段、类型，以及可获得的来源、单位与时间范围信息。应用面向目录编写，而非面向特定数据源，因此应用不关心数据来自何处。应用声明其数据需求及所需结构，本身不包含数据；导入时平台报告哪些需求已满足，并允许用户为其余需求绑定数据集、映射字段，同时检查必需字段与类型是否匹配。用户无需任何数据提供方的账号或密钥，凭据不会出现在应用定义或导出文件中。
+
+*Related commitments / 对应交付承诺: C04–C06*
+
+### 3.2 Multi-step computation and extensible logic | 多步骤计算与可扩展逻辑
+
+A library of named operations written by us covers financial and statistical work alike — ratios and growth rates, rolling windows, dispersion and correlation, rankings and percentiles, and the quantitative factors the market data itself defines. Because these are written in real code, how demanding the mathematics is sets no limit on what an application can compute: the application names an operation and sets its parameters. Alongside these, queries shape, join, filter and rank catalogue data; specification-compliant expressions cover the rest; steps execute according to their dependencies and pass intermediate results onward. A dedicated step calls a configured AI model from inside the running application, through a single platform interface — to summarise, classify or explain. The AI is not what builds the application; it is a part of the application, running every morning.
+
+由我们编写的命名运算库同时覆盖金融与统计计算——比率与增长率、滚动窗口、离散度与相关性、排名与分位数，以及市场数据本身定义的量化因子。由于这些运算以真实代码实现，数学复杂度不构成应用计算能力的上限：应用只需指定运算并设置参数。此外，查询负责对目录数据进行整形、关联、过滤与排序；符合规范的表达式覆盖其余情形；各步骤按依赖关系执行并向后传递中间结果。专门的步骤通过平台统一接口，在应用运行过程中调用已配置的 AI 模型，用于摘要、分类或解释。AI 不是构建应用的工具，而是应用的一部分，每天随应用运行。
+
+The platform additionally provides a way through for work that no combination of the above can express. This is not about work being mathematically difficult — the operation library covers that — but about work of a different shape: logic in which each step depends on the outcome of the one before it, or bookkeeping carried forward from one run to the next. It keeps the platform from ever being a dead end, and it runs under the same restrictions as everything else.
+
+平台另提供一条通路，用于上述组合无法表达的工作。这与数学难度无关——运算库已覆盖难度问题——而与结构形态有关：每一步依赖前一步结果的逻辑，或需要跨次运行结转的状态。它使平台不会成为死胡同，且与其他部分在相同限制下运行。
+
+*Related commitments / 对应交付承诺: C07*
+
+### 3.3 Parameters and scenario analysis | 参数与情景分析
+
+An application defines its parameters, their defaults, input ranges and constraint checks. A user adjusts assumptions and compares several scenarios without rebuilding the application, because the parameters are inputs to the application rather than part of its structure.
+
+应用定义参数、默认值、取值范围与约束检查。用户可调整假设并比较多个情景，而无需重建应用，因为参数是应用的输入，而非其结构的一部分。
+
+*Related commitments / 对应交付承诺: C07–C08*
+
+### 3.4 Generation, validation and correction | 应用生成、校验与纠正
+
+A single published specification describes data requirements, parameters, computational steps and the interface. A natural-language requirement is converted into an application against that specification and the platform's supported capabilities. Before execution, the platform validates structure, references, types, dependencies and permissions, returns machine-readable errors giving the location, code and reason for each, and runs a correction and revalidation cycle against them. This is what makes a generated application trustworthy: it is checked against a specification, not merely produced.
+
+一份已发布规范统一描述数据需求、参数、计算步骤与界面。自然语言需求依据该规范及平台已支持的能力被转换为应用。运行前，平台校验结构、引用、类型、依赖关系与权限，返回包含位置、错误代码与原因的机器可读结果，并针对这些错误执行修正与重新校验流程。这正是生成应用可信的原因：它经过规范校验，而不只是被生成出来。
+
+*Related commitments / 对应交付承诺: C01–C03, C11*
+
+### 3.5 Interactive presentation and result inspection | 交互展示与结果检查
+
+An application presents itself as an interface, not a report. Its output is arranged into a layout — charts, tables, single figures, written text and other display elements — alongside controls the user operates: inputs that change what the application looks at, and actions it can be asked to perform. The user can inspect the basis of the analysis: data provenance, formulas, parameters, assumptions and key intermediate results. Which particular display and control elements the platform offers is an implementation choice we expect to extend as we build; what every application is guaranteed is a usable interface rather than a static page of results.
+
+应用以界面形式呈现，而非报告。其输出按布局组织——图表、表格、单一数值、文字及其他展示元素——并配有用户可操作的控件：改变应用观察对象的输入，以及可要求应用执行的操作。用户可检查分析依据：数据来源、公式、参数、假设与关键中间结果。平台提供哪些具体展示与控件元素属于实现选择，我们预期在开发过程中扩展；每个应用获得的保证是一个可用界面，而不是静态结果页。
+
+*Related commitments / 对应交付承诺: C08*
+
+### 3.6 Controlled execution and traceable run records | 受控运行与可追溯记录
+
+Applications run on demand, on a schedule, and at specified offsets before or after market open and close according to the platform's configured trading calendar — on trading days only. Execution carries time and resource limits, and all provider credentials are held and managed by the platform. Every run is recorded and can be examined again: its time, parameters, status, results, failure reason where applicable, the application version, and a time identifier for the data used.
+
+应用支持手动运行、定时运行，以及依据平台已配置的交易日历在开盘或收盘前后指定时点运行——仅在交易日执行。执行设有时间与资源限制，所有数据提供方凭据由平台统一持有与管理。每次运行均被记录且可再次查看：时间、参数、状态、结果、失败原因（如有）、应用版本，以及所用数据的时间标识。
+
+*Related commitments / 对应交付承诺: C04, C09, C12*
+
+### 3.7 Deployment, reuse and delivery | 部署、复用与交付
+
+An application can be saved, accessed from the platform's application list, exported, imported and deployed. An exported file is a single file containing no dataset content and no credentials; the recipient runs it after binding the data it requires. Supporting third-party creation and delivery, the platform publishes a machine-readable specification of every supported building block — generated from the platform's own code, so it cannot go out of date — together with a standalone validity check, written developer and user guides covering idea to running application to sharing, and worked examples that are themselves real running applications.
+
+应用可保存、从平台应用列表访问、导出、导入与部署。导出文件为单个文件，不含数据集内容与凭据；接收方完成数据绑定后即可运行。为支持第三方创建与交付，平台发布覆盖全部受支持构建块的机器可读规范——由平台代码自动生成，因此不会过期——并提供可独立调用的校验功能、覆盖"想法→可运行应用→共享"全过程的开发与用户指南，以及本身即为真实运行应用的示例。
+
+*Related commitments / 对应交付承诺: C03, C10–C12*
+
+### 3.8 Installation and isolation | 安装与隔离
+
+One command installs and starts the platform on a machine that is not ours, on the operating systems and prerequisites stated in the documentation. A check command reports what is configured and what is missing instead of crashing. An application reaches data and models only through authorised platform interfaces: it cannot read the host file system, make arbitrary network requests, see another user's data, or hang the platform.
+
+在文档声明的操作系统与前置条件下，单条命令即可在非本团队的机器上完成平台安装与启动。检查命令报告已配置项与缺失项，而非直接崩溃。应用只能通过平台授权接口访问数据与模型：不能读取宿主文件系统、不能发起任意网络请求、不能查看其他用户的数据、不能使平台挂起。
+
+*Related commitments / 对应交付承诺: C12*
+
+```mermaid
+flowchart TD
+    A["User's idea in plain language / 自然语言想法"] --> B["Generation / 生成"]
+    S["Published specification / 已发布规范"] --> B
+    S --> X["Any external AI model / 外部 AI 模型"]
+    X --> V
+    B --> V["Validation / 校验"]
+    V -->|"invalid: precise errors / 不合规：精确报错"| B
+    V -->|"valid / 合规"| D["Application document / 应用文档"]
+    F["User's own tabular files / 用户自有表格文件"] --> C["Data catalogue / 数据目录"]
+    P["Provided market and company data / 平台已接入数据"] --> C
+    D --> R["Runtime / 运行时"]
+    C --> R
+    T["Triggers: manual, scheduled, market open/close / 触发：手动、定时、开收盘"] --> R
+    R --> O["Results: charts, tables, values, text / 结果：图表、表格、数值、文字"]
+    R --> H["Run records / 运行记录"]
+    D --> E["Export: one file, no data / 导出：单文件、不含数据"]
+    E --> I["Import: bind data, then run / 导入：绑定数据后运行"]
+```
+
+## 4. Development Commitment | 开发承诺
+
+The commitments below are assessed against the platform's published specification and the supported scope stated in its documentation. Final completion will be reported item by item under the same C01–C12 identifiers.
+
+以下承诺以平台已发布规范及文档声明的支持范围为验收依据。最终完成情况沿用 C01 至 C12 编号逐项报告。
+
+| ID / 编号 | Committed Capability / 承诺交付的平台功能 |
+| --- | --- |
+| C01 | A user can describe a financial requirement in plain language; the platform generates an application using its published specification and supported capabilities, then validates, deploys and runs it.<br>用户能够用自然语言描述金融需求，平台依据已发布的应用规范与支持的能力生成应用，并完成校验、部署与运行。 |
+| C02 | Before execution, the platform validates an application against its published specification, returns a machine-readable result giving the location, code and reason for each error, and supports a correction and revalidation cycle against those errors.<br>平台在运行前校验应用是否符合已发布规范，返回包含错误位置、错误代码和原因的机器可读结果，并支持针对这些错误的修正与重新校验流程。 |
+| C03 | An application created outside the platform — by a developer or by any large language model — according to the published specification can be imported, deployed and run after passing platform validation.<br>在平台之外依据已发布规范创建的应用（由开发者或任何大语言模型创建），通过平台校验后能够被导入、部署并运行。 |
+| C04 | Applications access connected data through a single unified catalogue. Data-provider credentials are configured and managed by the platform; application users need not supply them, and application definitions and exported files contain no credentials.<br>应用通过统一数据目录访问平台已接入的数据。数据提供方凭据由平台统一配置和管理，应用使用者无需提供这些凭据，应用定义及导出文件不包含凭据。 |
+| C05 | A user can register CSV and XLSX files as datasets in the data catalogue and browse their fields, types, provenance, and the unit and time-coverage information available for them.<br>用户能够将 CSV、XLSX 表格文件注册为数据目录中的数据集，并浏览字段、类型、来源及已提供的单位和时间范围信息。 |
+| C06 | An application declares its data requirements without containing dataset content. On import the platform reports which requirements are satisfied, lets the user bind datasets and map fields, and checks that required fields and types match.<br>应用声明其数据需求而不包含数据集内容。导入时平台报告需求的满足情况，允许用户绑定数据集并映射字段，检查必需字段和类型是否匹配。 |
+| C07 | Applications combine built-in financial and statistical operations, specification-compliant expressions and queries over catalogue data, execute multi-step computations according to their dependencies and pass intermediate results onward, and can call a configured AI model through a unified platform interface during execution.<br>应用能够组合平台内置的金融与统计运算、符合规范的表达式和对目录数据的查询，按依赖关系执行多步骤计算并传递中间结果，并支持在运行中通过统一接口调用已配置的 AI 模型。 |
+| C08 | An application presents its results through an interactive interface — charts, tables, values and text — with controls through which a user adjusts parameters and assumptions, compares scenarios and re-runs the application without rebuilding it, and can inspect data provenance, formulas, parameters and key intermediate results.<br>应用通过图表、表格、数值和文字构成的交互界面呈现结果，并提供控件供用户调整参数与假设、比较情景并重新运行，无需重建应用；用户能够查看数据来源、公式、参数和关键中间结果。 |
+| C09 | Applications run on demand, on a schedule, and at specified times before or after market open or close according to the platform's configured trading calendar. For each run the user can inspect its time, parameters, status, results, failure reason, the application version and a time identifier for the data used.<br>应用支持手动运行、定时运行，以及依据平台配置的交易日历在开盘或收盘前后指定时点运行。用户可查看每次运行的时间、参数、状态、结果、失败原因，以及应用版本和所用数据的时间标识。 |
+| C10 | An application can be exported as a single file containing no dataset content and no credentials; an application made by someone else can be imported, validated, bound to data, deployed, run, and accessed from the platform's application list.<br>应用可导出为单个不含数据集内容或凭据的文件；他人制作的应用可被导入，完成校验和数据绑定后部署并运行，并可从平台应用列表访问和使用。 |
+| C11 | The platform publishes a machine-readable specification covering every supported application building block, and provides a validity check for applications, written developer and user guides, and runnable example applications.<br>平台发布涵盖全部受支持应用构建块的机器可读规范，并提供应用校验功能、书面开发与用户指南，以及可运行的示例应用。 |
+| C12 | On the operating systems and prerequisites stated in the documentation, the platform installs and starts with a single command and reports its configuration status and anything missing. Application execution carries time and resource limits, and applications use data and models only through authorised platform interfaces — they cannot read the host file system or make arbitrary network requests.<br>在文档声明支持的操作系统和前置条件下，平台能够通过单条命令完成安装与启动，并报告配置状态与缺失项。平台对应用运行设置超时和资源限制；应用仅能通过平台授权接口使用数据和模型，不能直接读取宿主文件系统或发起任意网络请求。 |
+
+The deadline locks these commitments, not implementation choices. The same identifiers are reused when reporting completion in `Final_Report.md`; implementations may improve, but locked commitments will not be replaced or materially altered.
+
+截止时锁定的是功能承诺，而非技术实现方式。最终在 `Final_Report.md` 中沿用相同编号报告完成情况；可改进实现，但不会替换或实质性改变已锁定的承诺。

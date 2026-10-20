@@ -1,0 +1,15 @@
+{
+  "note": "Illustrative prototype; NOT the official Blocks app file specification.",
+  "steps": [
+    {
+      "id": "financial_red_flags",
+      "operation": "regguard.screen_accounting_v2",
+      "arguments": {
+        "balance": {"$ref": "authorized_balance_data"},
+        "income": {"$ref": "authorized_income_data"},
+        "cashflow": {"$ref": "authorized_cashflow_data"},
+        "as_of": "2026-10-13"
+      }
+    }
+  ]
+}

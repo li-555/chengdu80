@@ -1,0 +1,255 @@
+{
+  "audit": [
+    {
+      "ts_code": "DEMO001.SZ",
+      "report_period": "2024-12-31",
+      "available_at": "2025-05-01",
+      "opinion_original": "标准无保留意见",
+      "opinion_type": "unmodified",
+      "audit_agency": "虚构会计师事务所A",
+      "auditor_changed_vs_previous_observation": false,
+      "status": "observation",
+      "evidence_level": "structured_provider_field",
+      "source": "tushare.fina_audit",
+      "source_url": null,
+      "caution": "审计意见文字分类不代表法律或舞弊认定；审计机构变更要结合原因与报告期核实。"
+    },
+    {
+      "ts_code": "DEMO001.SZ",
+      "report_period": "2025-12-31",
+      "available_at": "2026-06-01",
+      "opinion_original": "保留意见",
+      "opinion_type": "qualified",
+      "audit_agency": "虚构会计师事务所B",
+      "auditor_changed_vs_previous_observation": true,
+      "status": "requires_review",
+      "evidence_level": "structured_provider_field",
+      "source": "tushare.fina_audit",
+      "source_url": null,
+      "caution": "审计意见文字分类不代表法律或舞弊认定；审计机构变更要结合原因与报告期核实。"
+    },
+    {
+      "ts_code": "DEMO002.SH",
+      "report_period": "2025-12-31",
+      "available_at": "2026-06-02",
+      "opinion_original": "标准无保留意见",
+      "opinion_type": "unmodified",
+      "audit_agency": "虚构会计师事务所C",
+      "auditor_changed_vs_previous_observation": false,
+      "status": "observation",
+      "evidence_level": "structured_provider_field",
+      "source": "tushare.fina_audit",
+      "source_url": null,
+      "caution": "审计意见文字分类不代表法律或舞弊认定；审计机构变更要结合原因与报告期核实。"
+    }
+  ],
+  "pledge": [
+    {
+      "ts_code": "DEMO001.SZ",
+      "available_at": "2025-12-31",
+      "issuer_pledge_ratio_pct": 28.0,
+      "change_pp": null,
+      "flags": [],
+      "status": "not_triggered",
+      "thresholds": {
+        "ratio_pct": 50,
+        "increase_pp": 15
+      },
+      "evidence_level": "structured_provider_field",
+      "data_source": "tushare.pledge_stat",
+      "caution": "公司整体质押比例≠控股股东个人质押比例；阈值仅为研究初值，非监管结论。"
+    },
+    {
+      "ts_code": "DEMO001.SZ",
+      "available_at": "2026-09-30",
+      "issuer_pledge_ratio_pct": 55.0,
+      "change_pp": 27.0,
+      "flags": [
+        "high_issuer_pledge_ratio",
+        "large_issuer_pledge_increase"
+      ],
+      "status": "triggered",
+      "thresholds": {
+        "ratio_pct": 50,
+        "increase_pp": 15
+      },
+      "evidence_level": "structured_provider_field",
+      "data_source": "tushare.pledge_stat",
+      "caution": "公司整体质押比例≠控股股东个人质押比例；阈值仅为研究初值，非监管结论。"
+    },
+    {
+      "ts_code": "DEMO002.SH",
+      "available_at": "2026-09-30",
+      "issuer_pledge_ratio_pct": 13.0,
+      "change_pp": null,
+      "flags": [],
+      "status": "not_triggered",
+      "thresholds": {
+        "ratio_pct": 50,
+        "increase_pp": 15
+      },
+      "evidence_level": "structured_provider_field",
+      "data_source": "tushare.pledge_stat",
+      "caution": "公司整体质押比例≠控股股东个人质押比例；阈值仅为研究初值，非监管结论。"
+    }
+  ],
+  "filing_titles": [
+    {
+      "ts_code": "DEMO003.SZ",
+      "published_at": "2026-08-01",
+      "title": "关于重大诉讼进展的公告",
+      "source_url": "https://example.org/fictional/litigation.pdf",
+      "categories": [
+        "litigation"
+      ],
+      "evidence_level": "title_only",
+      "review_status": "unreviewed",
+      "requires_primary_document": true,
+      "caution": "仅标题关键词初筛；并未阅读全文，不能断言公告内容、违法事实或案件结论。"
+    },
+    {
+      "ts_code": "DEMO002.SH",
+      "published_at": "2026-07-01",
+      "title": "关于对外担保事项的公告",
+      "source_url": "https://example.org/fictional/guarantee.pdf",
+      "categories": [
+        "guarantee"
+      ],
+      "evidence_level": "title_only",
+      "review_status": "unreviewed",
+      "requires_primary_document": true,
+      "caution": "仅标题关键词初筛；并未阅读全文，不能断言公告内容、违法事实或案件结论。"
+    },
+    {
+      "ts_code": "DEMO001.SZ",
+      "published_at": "2026-06-03",
+      "title": "关于会计差错更正的公告",
+      "source_url": "https://example.org/fictional/restatement.pdf",
+      "categories": [
+        "accounting_restatement"
+      ],
+      "evidence_level": "title_only",
+      "review_status": "unreviewed",
+      "requires_primary_document": true,
+      "caution": "仅标题关键词初筛；并未阅读全文，不能断言公告内容、违法事实或案件结论。"
+    },
+    {
+      "ts_code": "DEMO001.SZ",
+      "published_at": "2026-06-01",
+      "title": "关于变更会计师事务所的公告",
+      "source_url": "https://example.org/fictional/audit.pdf",
+      "categories": [
+        "auditor_change"
+      ],
+      "evidence_level": "title_only",
+      "review_status": "unreviewed",
+      "requires_primary_document": true,
+      "caution": "仅标题关键词初筛；并未阅读全文，不能断言公告内容、违法事实或案件结论。"
+    }
+  ],
+  "digest": {
+    "as_of": "2026-10-13",
+    "period": "daily",
+    "alert_count": 6,
+    "issuer_count": 3,
+    "by_type": {
+      "pledge": 1,
+      "audit": 1,
+      "filing_title": 4
+    },
+    "needs_human_review": 6,
+    "alerts": [
+      {
+        "ts_code": "DEMO001.SZ",
+        "alert_id": "SHARE_PLEDGE",
+        "available_at": "2026-09-30",
+        "source_type": "pledge",
+        "evidence_level": "structured_provider_field",
+        "detail": [
+          "high_issuer_pledge_ratio",
+          "large_issuer_pledge_increase"
+        ],
+        "observed": 55.0,
+        "source_url": null,
+        "review_priority": "medium",
+        "review_status": "unreviewed"
+      },
+      {
+        "ts_code": "DEMO001.SZ",
+        "alert_id": "AUDIT_REVIEW",
+        "available_at": "2026-06-01",
+        "source_type": "audit",
+        "evidence_level": "structured_provider_field",
+        "detail": "保留意见",
+        "source_url": null,
+        "review_priority": "medium",
+        "review_status": "unreviewed"
+      },
+      {
+        "ts_code": "DEMO003.SZ",
+        "alert_id": "DISCLOSURE_TITLE",
+        "available_at": "2026-08-01",
+        "source_type": "filing_title",
+        "evidence_level": "title_only",
+        "detail": [
+          "litigation"
+        ],
+        "source_url": "https://example.org/fictional/litigation.pdf",
+        "review_priority": "review",
+        "review_status": "unreviewed"
+      },
+      {
+        "ts_code": "DEMO002.SH",
+        "alert_id": "DISCLOSURE_TITLE",
+        "available_at": "2026-07-01",
+        "source_type": "filing_title",
+        "evidence_level": "title_only",
+        "detail": [
+          "guarantee"
+        ],
+        "source_url": "https://example.org/fictional/guarantee.pdf",
+        "review_priority": "review",
+        "review_status": "unreviewed"
+      },
+      {
+        "ts_code": "DEMO001.SZ",
+        "alert_id": "DISCLOSURE_TITLE",
+        "available_at": "2026-06-03",
+        "source_type": "filing_title",
+        "evidence_level": "title_only",
+        "detail": [
+          "accounting_restatement"
+        ],
+        "source_url": "https://example.org/fictional/restatement.pdf",
+        "review_priority": "review",
+        "review_status": "unreviewed"
+      },
+      {
+        "ts_code": "DEMO001.SZ",
+        "alert_id": "DISCLOSURE_TITLE",
+        "available_at": "2026-06-01",
+        "source_type": "filing_title",
+        "evidence_level": "title_only",
+        "detail": [
+          "auditor_change"
+        ],
+        "source_url": "https://example.org/fictional/audit.pdf",
+        "review_priority": "review",
+        "review_status": "unreviewed"
+      }
+    ],
+    "caution": "此表是已披露证据的待查线索汇总，不构成舞弊定论、违法认定或投资建议。",
+    "sample_case_history": [
+      {
+        "actor": "demo-reviewer",
+        "event_time": "2026-10-13T14:12:09.676627+00:00",
+        "status": "in_review",
+        "case_state": "not_checked",
+        "note": "人工核对全文前保持待确认状态",
+        "evidence_url": null,
+        "previous_digest": "",
+        "digest": "16587bb1d4c6bbf855574b965c30830a32b6acf2c481e8d12e49b9468bf066f5"
+      }
+    ]
+  }
+}

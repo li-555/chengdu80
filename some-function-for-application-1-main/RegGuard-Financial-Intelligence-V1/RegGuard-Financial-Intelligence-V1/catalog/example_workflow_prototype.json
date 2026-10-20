@@ -1,0 +1,19 @@
+{
+  "_note": "Conceptual operation composition, NOT the official Blocks application file schema",
+  "title": "RegGuard 企业财务与披露预警",
+  "as_of": "2026-10-13",
+  "data_requirements": [
+    {"name":"balance", "catalogue":"cd80_stock_fin_balancesheet"},
+    {"name":"income", "catalogue":"cd80_stock_fin_income"},
+    {"name":"cashflow", "catalogue":"cd80_stock_fin_cashflow"},
+    {"name":"announcements", "catalogue":"cd80_anns_d"}
+  ],
+  "steps": [
+    {"name":"financial_screen", "operation":"regguard.screen_financials", "args":{"balance":"$balance","income":"$income","cashflow":"$cashflow","as_of":"2026-10-13"}},
+    {"name":"disclosure_titles", "operation":"regguard.filing_event_triage", "args":{"filings":"$normalized_announcements","as_of":"2026-10-13"}},
+    {"name":"alert_list", "operation":"regguard.consolidate_alerts", "args":{"financial_scans":"$financial_screen","filing_events":"$disclosure_titles","as_of":"2026-10-13"}},
+    {"name":"digest", "operation":"regguard.build_digest", "args":{"alerts":"$alert_list","as_of":"2026-10-13"}}
+  ],
+  "display":["company_risk_flags","evidence_and_formula","missing_data","human_review_status"],
+  "requires_blocks_adapter":true
+}

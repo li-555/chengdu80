@@ -1,0 +1,238 @@
+ALL DATA BELOW ARE INVENTED / 以下所有财务数据均为虚构演示：
+[
+  {
+    "ts_code": "DEMO001",
+    "report_period": "2025-12-31",
+    "available_at": "2026-04-30",
+    "as_of": "2026-10-13",
+    "rule_version": "research-2026-10-v1",
+    "trigger_count": 5,
+    "rules": [
+      {
+        "rule_id": "R1_cash_earnings_gap",
+        "rule_version": "research-2026-10-v1",
+        "status": "triggered",
+        "observed": {
+          "cash_conversion_by_year": {
+            "2024": 0.2,
+            "2025": 0.2
+          }
+        },
+        "threshold": {
+          "below": 0.5,
+          "consecutive_years": 2
+        },
+        "fields": [
+          "n_income",
+          "n_cashflow_act"
+        ],
+        "reason": "连续可比年度经营现金流不足以覆盖正净利润",
+        "review_priority": "medium",
+        "review_status": "unreviewed",
+        "interpretation_limit": "初筛研究线索；不是舞弊认定、监管结论或投资建议。"
+      },
+      {
+        "rule_id": "R2_receivables_vs_sales",
+        "rule_version": "research-2026-10-v1",
+        "status": "triggered",
+        "observed": {
+          "growth_gap": 1.2999999999999998,
+          "ar_to_sales_increased": true
+        },
+        "threshold": {
+          "growth_gap_above": 0.15,
+          "ratio_must_rise": true
+        },
+        "fields": [
+          "accounts_receiv",
+          "revenue"
+        ],
+        "reason": "应收增长快于营收，且应收/营收占比上升",
+        "review_priority": "medium",
+        "review_status": "unreviewed",
+        "interpretation_limit": "初筛研究线索；不是舞弊认定、监管结论或投资建议。"
+      },
+      {
+        "rule_id": "R3_high_cash_high_debt",
+        "rule_version": "research-2026-10-v1",
+        "status": "not_evaluable",
+        "observed": {
+          "cash_over_assets": 0.3,
+          "debt_over_assets": 0.32
+        },
+        "threshold": {
+          "cash_over_assets": 0.15,
+          "debt_over_assets": 0.25,
+          "requires_verified_deposit_interest_yield": true
+        },
+        "fields": [
+          "money_cap",
+          "st_borr",
+          "lt_borr",
+          "bond_payable",
+          "total_assets"
+        ],
+        "reason": "未获得已核实可比的存款利息收入口径，不可将现金多+债务多等同于风险结论",
+        "review_priority": null,
+        "review_status": "not_applicable",
+        "interpretation_limit": "初筛研究线索；不是舞弊认定、监管结论或投资建议。"
+      },
+      {
+        "rule_id": "R4_other_receivables_concentration",
+        "rule_version": "research-2026-10-v1",
+        "status": "triggered",
+        "observed": {
+          "other_receivables_over_assets": 0.12
+        },
+        "threshold": {
+          "above": 0.1
+        },
+        "fields": [
+          "oth_receiv",
+          "total_assets"
+        ],
+        "reason": "其他应收款占资产比重偏高，需核查附注和往来方性质",
+        "review_priority": "medium",
+        "review_status": "unreviewed",
+        "interpretation_limit": "初筛研究线索；不是舞弊认定、监管结论或投资建议。"
+      },
+      {
+        "rule_id": "R7_low_current_ratio",
+        "rule_version": "research-2026-10-v1",
+        "status": "triggered",
+        "observed": {
+          "current_ratio": 0.5454545454545454
+        },
+        "threshold": {
+          "below": 1.0
+        },
+        "fields": [
+          "total_cur_assets",
+          "total_cur_liab"
+        ],
+        "reason": "短期流动性指标偏弱，应结合行业和资产可变现性判断",
+        "review_priority": "medium",
+        "review_status": "unreviewed",
+        "interpretation_limit": "初筛研究线索；不是舞弊认定、监管结论或投资建议。"
+      },
+      {
+        "rule_id": "R11_joint_receivables_pattern",
+        "rule_version": "research-2026-10-v1",
+        "status": "triggered",
+        "observed": {
+          "r2_status": "triggered",
+          "r4_status": "triggered"
+        },
+        "threshold": {
+          "both": [
+            "R2_receivables_vs_sales",
+            "R4_other_receivables_concentration"
+          ]
+        },
+        "fields": [
+          "accounts_receiv",
+          "revenue",
+          "oth_receiv",
+          "total_assets"
+        ],
+        "reason": "多个应收类指标同时偏离，仅提示进一步查核经营和关联交易附注",
+        "review_priority": "medium",
+        "review_status": "unreviewed",
+        "interpretation_limit": "初筛研究线索；不是舞弊认定、监管结论或投资建议。"
+      }
+    ],
+    "caution": "基于有限报表字段的研究预警，不构成财务舞弊/违法事实或风险概率；阈值均需同行业校准。"
+  }
+]
+
+Fictitious peers:
+[
+  {
+    "ts_code": "DEMO00",
+    "industry": "虚构行业",
+    "report_period": "2025-12-31",
+    "available_at": "2026-04-30",
+    "score": 0.0,
+    "sample_percentile": 0.125,
+    "peer_count": 8,
+    "status": "ok",
+    "caution": "仅同业已披露样本中的数值排名，非舞弊概率、违约概率或投资建议。"
+  },
+  {
+    "ts_code": "DEMO01",
+    "industry": "虚构行业",
+    "report_period": "2025-12-31",
+    "available_at": "2026-04-30",
+    "score": 0.1,
+    "sample_percentile": 0.25,
+    "peer_count": 8,
+    "status": "ok",
+    "caution": "仅同业已披露样本中的数值排名，非舞弊概率、违约概率或投资建议。"
+  },
+  {
+    "ts_code": "DEMO02",
+    "industry": "虚构行业",
+    "report_period": "2025-12-31",
+    "available_at": "2026-04-30",
+    "score": 0.2,
+    "sample_percentile": 0.375,
+    "peer_count": 8,
+    "status": "ok",
+    "caution": "仅同业已披露样本中的数值排名，非舞弊概率、违约概率或投资建议。"
+  },
+  {
+    "ts_code": "DEMO03",
+    "industry": "虚构行业",
+    "report_period": "2025-12-31",
+    "available_at": "2026-04-30",
+    "score": 0.3,
+    "sample_percentile": 0.5,
+    "peer_count": 8,
+    "status": "ok",
+    "caution": "仅同业已披露样本中的数值排名，非舞弊概率、违约概率或投资建议。"
+  },
+  {
+    "ts_code": "DEMO04",
+    "industry": "虚构行业",
+    "report_period": "2025-12-31",
+    "available_at": "2026-04-30",
+    "score": 0.4,
+    "sample_percentile": 0.625,
+    "peer_count": 8,
+    "status": "ok",
+    "caution": "仅同业已披露样本中的数值排名，非舞弊概率、违约概率或投资建议。"
+  },
+  {
+    "ts_code": "DEMO05",
+    "industry": "虚构行业",
+    "report_period": "2025-12-31",
+    "available_at": "2026-04-30",
+    "score": 0.5,
+    "sample_percentile": 0.75,
+    "peer_count": 8,
+    "status": "ok",
+    "caution": "仅同业已披露样本中的数值排名，非舞弊概率、违约概率或投资建议。"
+  },
+  {
+    "ts_code": "DEMO06",
+    "industry": "虚构行业",
+    "report_period": "2025-12-31",
+    "available_at": "2026-04-30",
+    "score": 0.6,
+    "sample_percentile": 0.875,
+    "peer_count": 8,
+    "status": "ok",
+    "caution": "仅同业已披露样本中的数值排名，非舞弊概率、违约概率或投资建议。"
+  },
+  {
+    "ts_code": "DEMO07",
+    "industry": "虚构行业",
+    "report_period": "2025-12-31",
+    "available_at": "2026-04-30",
+    "score": 0.7,
+    "sample_percentile": 1.0,
+    "peer_count": 8,
+    "status": "ok",
+    "caution": "仅同业已披露样本中的数值排名，非舞弊概率、违约概率或投资建议。"
+  }
+]

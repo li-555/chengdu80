@@ -1,0 +1,16 @@
+{
+  "version": "prototype-0.2",
+  "title": "F10股票比较与组合风险研究（仅示例，不含用户数据）",
+  "steps": [
+    {
+      "id": "fundamental_cards",
+      "operation": "finance.f10_cards",
+      "arguments": {"indicators": {"$ref": "financial_data"}, "as_of": "2026-09-30"}
+    },
+    {
+      "id": "portfolio_risk",
+      "operation": "finance.portfolio_risk",
+      "arguments": {"bars_by_code": {"$ref": "watchlist_prices"}}
+    }
+  ]
+}

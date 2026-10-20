@@ -1,0 +1,14 @@
+{
+  "version": "0.1-example",
+  "title": "AlphaPilot A股日终分析",
+  "data_requirements": [
+    {"name": "prices", "source": "catalogue", "required_fields": ["trade_date", "open", "high", "low", "close", "vol", "adj_factor"]}
+  ],
+  "steps": [
+    {"id": "risk", "operation": "finance.performance", "input": "prices"},
+    {"id": "technical", "operation": "finance.technical_indicators", "input": "prices"},
+    {"id": "signals", "operation": "finance.observation_signals", "input": "prices"}
+  ],
+  "schedule": {"type": "after_market_close", "trading_calendar": "SSE", "offset_minutes": 60},
+  "views": [{"type": "table", "source": "technical"}, {"type": "text", "source": "risk"}]
+}

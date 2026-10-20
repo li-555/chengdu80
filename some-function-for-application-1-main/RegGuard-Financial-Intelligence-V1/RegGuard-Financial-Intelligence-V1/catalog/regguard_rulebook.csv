@@ -1,0 +1,13 @@
+﻿id,name,calculation_in_words,research_threshold,why_it_matters,review_priority,implementation_status,required_fields,limitations
+R1,利润与经营现金流背离,最近N个连续年报中：经营现金流/正净利润均低于阈值,<0.50，连续2年,利润含金量与回款能力值得复核,medium,implemented,income:n_income;cashflow:n_cashflow_act,研究初始阈值，非监管标准；负净利润/无现金流应给不可计算
+R2,应收账款增长快于营收,应收同比增长率−营收同比增长率，且应收/营收升高,>15个百分点且占比升高,收入兑现和信用回款结构可能变化,medium,implemented,balance:accounts_receiv;income:revenue,连续可比年报；营收或前期应收≤0则不可计算
+R3,存贷双高,现金/资产、有息借款/资产，同时结合可核实存款利息收益率,初始研究值0.15/0.25；存款收益率口径待核实,资金使用效率与有息融资成本值得问询,review,blocked_missing_verified_field,"balance:money_cap,st_borr,lt_borr,bond_payable,total_assets",不得把现金多+债务多当作舞弊或最终风险判定
+R4,其他应收款集中,其他应收款/总资产,>10%,需核查往来对象、资产质量及附注,medium,implemented,"balance:oth_receiv,total_assets",不能直接断言关联方资金占用
+R5,异常对外担保,对外担保余额/净资产，并判断是否为关联方担保,待按实际披露及行业校准,或有负债、关联交易敞口,review,requires_disclosure_content,annual_report:guarantee_note,仅标题检索不足以量化担保余额
+R6,股票质押压力,控股股东质押股数/其持股数，与总质押比例及其变化,研究值>70%或增幅>20%,股东流动性压力或处置风险线索,review,requires_current_pledge_data,"tushare:pledge_stat,pledge_detail",组委会旧质押表2015–2017不可当当前状态
+R7,流动比率偏低,流动资产/流动负债,<1.0,短期偿付能力需要结合行业进一步复核,medium,implemented_partial,"balance:total_cur_assets,total_cur_liab",利息保障倍数未计算；非金融企业限定
+R8,审计师更换,公告披露的审计师变更事件；连续变动可提示加强复核,任一次公告提示,频繁变更可能影响审计连续性,review,title_only_triage,"announcements:announcement_title,url",标题只是线索，不等于审计异常意见
+R9,会计差错更正,公告中存在会计差错更正或追溯调整事件,任一次公告提示,历史数据可比性与披露质量需复核,review,title_only_triage,"announcements:announcement_title,url",财报重述按新披露日进入数据，不能回填旧回测
+R10,股东/董监高减持,经公告核实的主体在六个月期间累计净减持比例,研究值>1%总股本,治理与市场供给事件,review,requires_verified_holdings_and_sales,tushare:stk_holdertrade;announcements,公司/个人身份需要核查，不能用公告标题计算比例
+R11,多项应收异常并发,R2 和 R4 同时触发,R2∧R4,多个会计异动同时出现建议查阅关联交易及收入附注,medium,implemented,"derived:R2,R4",并发仅表示进一步调查优先级，不是无实质交易的结论
+R12,融资窗口与业绩披露临近,股权融资/重组事件日与业绩公告期的事件距离,前后30交易日（待校准）,披露动机与融资安排值得人工复核,review,requires_event_calendar,announcements;financing_events,需要区分自然日/交易日，禁止下违法结论

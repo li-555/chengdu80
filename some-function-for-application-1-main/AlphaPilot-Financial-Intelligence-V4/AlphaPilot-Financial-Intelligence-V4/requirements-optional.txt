@@ -1,0 +1,4 @@
+pandas-ta-classic
+quantstats
+scikit-learn
+# tushare (data provider; install only when provided with authorized token)

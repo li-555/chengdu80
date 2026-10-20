@@ -1,0 +1,4 @@
+ts_code,ann_date,end_date,audit_result,audit_agency
+DEMO001.SZ,20250501,20241231,标准无保留意见,虚构会计师事务所A
+DEMO001.SZ,20260601,20251231,保留意见,虚构会计师事务所B
+DEMO002.SH,20260602,20251231,标准无保留意见,虚构会计师事务所C

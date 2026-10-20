@@ -1,0 +1,629 @@
+{
+  "format": "regguard-tool-metadata-v1",
+  "tools": [
+    {
+      "name": "regguard.screen_financials",
+      "description_zh": "跨报告期财务红旗 R1/R2/R3/R4/R7/R11",
+      "expected_data": "财务报表已披露日期",
+      "limitations_zh": "R3数据不齐时不可计算；不判定舞弊",
+      "execution_class": "research",
+      "parameters": [
+        {
+          "name": "balance",
+          "required": true,
+          "default": null,
+          "type_hint": "pd.DataFrame"
+        },
+        {
+          "name": "income",
+          "required": true,
+          "default": null,
+          "type_hint": "pd.DataFrame"
+        },
+        {
+          "name": "cashflow",
+          "required": true,
+          "default": null,
+          "type_hint": "pd.DataFrame"
+        },
+        {
+          "name": "as_of",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        },
+        {
+          "name": "cfo_ni_threshold",
+          "required": false,
+          "default": 0.5,
+          "type_hint": "float"
+        },
+        {
+          "name": "receivables_gap_threshold",
+          "required": false,
+          "default": 0.15,
+          "type_hint": "float"
+        },
+        {
+          "name": "other_receivables_threshold",
+          "required": false,
+          "default": 0.1,
+          "type_hint": "float"
+        },
+        {
+          "name": "current_ratio_threshold",
+          "required": false,
+          "default": 1.0,
+          "type_hint": "float"
+        },
+        {
+          "name": "consecutive_years",
+          "required": false,
+          "default": 2,
+          "type_hint": "int"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    },
+    {
+      "name": "regguard.altman_em_z",
+      "description_zh": "Altman 新兴市场 Z双撇描述性偿债评分",
+      "expected_data": "两张年报",
+      "limitations_zh": "非金融企业，禁止混用阈值版本",
+      "execution_class": "research",
+      "parameters": [
+        {
+          "name": "balance",
+          "required": true,
+          "default": null,
+          "type_hint": "pd.DataFrame"
+        },
+        {
+          "name": "income",
+          "required": true,
+          "default": null,
+          "type_hint": "pd.DataFrame"
+        },
+        {
+          "name": "as_of",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    },
+    {
+      "name": "regguard.piotroski_f",
+      "description_zh": "Piotroski 九项财务健康信号",
+      "expected_data": "连续两期年报/增发标记",
+      "limitations_zh": "不是欺诈检测；9项不全只输出部分分数",
+      "execution_class": "research",
+      "parameters": [
+        {
+          "name": "balance",
+          "required": true,
+          "default": null,
+          "type_hint": "pd.DataFrame"
+        },
+        {
+          "name": "income",
+          "required": true,
+          "default": null,
+          "type_hint": "pd.DataFrame"
+        },
+        {
+          "name": "cashflow",
+          "required": true,
+          "default": null,
+          "type_hint": "pd.DataFrame"
+        },
+        {
+          "name": "as_of",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        },
+        {
+          "name": "issuance_flags",
+          "required": false,
+          "default": null,
+          "type_hint": "dict[str, bool] | None"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    },
+    {
+      "name": "regguard.beneish_m",
+      "description_zh": "Beneish 八因子财务操纵模式研究评分",
+      "expected_data": "两期合并财报",
+      "limitations_zh": "非舞弊概率；对A股适用性未经验证",
+      "execution_class": "research",
+      "parameters": [
+        {
+          "name": "balance",
+          "required": true,
+          "default": null,
+          "type_hint": "pd.DataFrame"
+        },
+        {
+          "name": "income",
+          "required": true,
+          "default": null,
+          "type_hint": "pd.DataFrame"
+        },
+        {
+          "name": "cashflow",
+          "required": true,
+          "default": null,
+          "type_hint": "pd.DataFrame"
+        },
+        {
+          "name": "as_of",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    },
+    {
+      "name": "regguard.accrual_quality",
+      "description_zh": "经营应计质量比率",
+      "expected_data": "两期资产和经营现金流",
+      "limitations_zh": "有多种Sloan口径，不混同",
+      "execution_class": "research",
+      "parameters": [
+        {
+          "name": "balance",
+          "required": true,
+          "default": null,
+          "type_hint": "pd.DataFrame"
+        },
+        {
+          "name": "income",
+          "required": true,
+          "default": null,
+          "type_hint": "pd.DataFrame"
+        },
+        {
+          "name": "cashflow",
+          "required": true,
+          "default": null,
+          "type_hint": "pd.DataFrame"
+        },
+        {
+          "name": "as_of",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    },
+    {
+      "name": "regguard.compare_peer_scores",
+      "description_zh": "同业同报告期评分样本内百分位",
+      "expected_data": "至少8家已披露同类企业",
+      "limitations_zh": "非概率，排序不代表结论",
+      "execution_class": "research",
+      "parameters": [
+        {
+          "name": "records",
+          "required": true,
+          "default": null,
+          "type_hint": "list[dict]"
+        },
+        {
+          "name": "as_of",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        },
+        {
+          "name": "min_peers",
+          "required": false,
+          "default": 8,
+          "type_hint": "int"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    },
+    {
+      "name": "regguard.audit_opinion_review",
+      "description_zh": "Tushare审计意见结构化字段分类及变更提醒",
+      "expected_data": "fina_audit数据表",
+      "limitations_zh": "文字分类仅供人工核实",
+      "execution_class": "review",
+      "parameters": [
+        {
+          "name": "audits",
+          "required": true,
+          "default": null,
+          "type_hint": "pd.DataFrame"
+        },
+        {
+          "name": "as_of",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    },
+    {
+      "name": "regguard.pledge_risk_review",
+      "description_zh": "公司整体质押比例和百分点变化",
+      "expected_data": "pledge_stat/公司统计",
+      "limitations_zh": "不等于实控人个人质押风险",
+      "execution_class": "review",
+      "parameters": [
+        {
+          "name": "pledges",
+          "required": true,
+          "default": null,
+          "type_hint": "pd.DataFrame"
+        },
+        {
+          "name": "as_of",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        },
+        {
+          "name": "ratio_threshold_pct",
+          "required": false,
+          "default": 50,
+          "type_hint": "float"
+        },
+        {
+          "name": "change_threshold_pp",
+          "required": false,
+          "default": 15,
+          "type_hint": "float"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    },
+    {
+      "name": "regguard.filing_event_triage",
+      "description_zh": "公告标题级监管、诉讼、重述、担保初筛",
+      "expected_data": "公告标题、日期、链接",
+      "limitations_zh": "必须打开原公告复核，禁止假装阅读全文",
+      "execution_class": "review",
+      "parameters": [
+        {
+          "name": "filings",
+          "required": true,
+          "default": null,
+          "type_hint": "pd.DataFrame"
+        },
+        {
+          "name": "as_of",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    },
+    {
+      "name": "regguard.controller_legal_checklist",
+      "description_zh": "生成实控人/董监高官方核查清单",
+      "expected_data": "已授权主体身份与角色",
+      "limitations_zh": "禁止同名自动认定；不爬验证码网站",
+      "execution_class": "manual",
+      "parameters": [
+        {
+          "name": "entities",
+          "required": true,
+          "default": null,
+          "type_hint": "list[dict]"
+        },
+        {
+          "name": "as_of",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    },
+    {
+      "name": "regguard.disclosed_ownership_graph",
+      "description_zh": "前十大股东历史关系网络和已人工核实控制关系",
+      "expected_data": "公告时间+前十大股东/人工核实链接",
+      "limitations_zh": "持股不等于控制，需核对主体身份和时间",
+      "execution_class": "review",
+      "parameters": [
+        {
+          "name": "holders",
+          "required": true,
+          "default": null,
+          "type_hint": "pd.DataFrame"
+        },
+        {
+          "name": "as_of",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        },
+        {
+          "name": "controller_links",
+          "required": false,
+          "default": null,
+          "type_hint": "list[dict] | None"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    },
+    {
+      "name": "regguard.regulatory_change_tracker",
+      "description_zh": "已授权监管文件快照新旧版本对比",
+      "expected_data": "官方文件两版全文和发布时间",
+      "limitations_zh": "缺失不等于废止；法律效力需人工核查",
+      "execution_class": "review",
+      "parameters": [
+        {
+          "name": "previous",
+          "required": true,
+          "default": null,
+          "type_hint": "list[dict]"
+        },
+        {
+          "name": "current",
+          "required": true,
+          "default": null,
+          "type_hint": "list[dict]"
+        },
+        {
+          "name": "as_of",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    },
+    {
+      "name": "regguard.classify_regulatory_topics",
+      "description_zh": "对监管文本按关键词分类",
+      "expected_data": "一段原文",
+      "limitations_zh": "非法律效力或合规义务结论",
+      "execution_class": "research",
+      "parameters": [
+        {
+          "name": "text",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    },
+    {
+      "name": "regguard.peer_outlier_screen",
+      "description_zh": "稳健标准化+IsolationForest同业异常评分",
+      "expected_data": "同一期已披露完整指标>=30企业",
+      "limitations_zh": "非舞弊概率/非预测，需可选sklearn",
+      "execution_class": "optional_ml",
+      "parameters": [
+        {
+          "name": "records",
+          "required": true,
+          "default": null,
+          "type_hint": "list[dict]"
+        },
+        {
+          "name": "as_of",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        },
+        {
+          "name": "features",
+          "required": false,
+          "default": null,
+          "type_hint": "list[str] | None"
+        },
+        {
+          "name": "min_peers",
+          "required": false,
+          "default": 30,
+          "type_hint": "int"
+        },
+        {
+          "name": "contamination",
+          "required": false,
+          "default": 0.05,
+          "type_hint": "float"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    },
+    {
+      "name": "regguard.consolidate_alerts",
+      "description_zh": "合并独立风险线索并按复核优先级排列",
+      "expected_data": "已计算的规则与事件",
+      "limitations_zh": "不要合成黑盒总舞弊分",
+      "execution_class": "research",
+      "parameters": [
+        {
+          "name": "financial_scans",
+          "required": false,
+          "default": null,
+          "type_hint": "list[dict] | None"
+        },
+        {
+          "name": "audit_reviews",
+          "required": false,
+          "default": null,
+          "type_hint": "list[dict] | None"
+        },
+        {
+          "name": "pledge_reviews",
+          "required": false,
+          "default": null,
+          "type_hint": "list[dict] | None"
+        },
+        {
+          "name": "filing_events",
+          "required": false,
+          "default": null,
+          "type_hint": "list[dict] | None"
+        },
+        {
+          "name": "as_of",
+          "required": false,
+          "default": "2026-10-13",
+          "type_hint": "str"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    },
+    {
+      "name": "regguard.build_digest",
+      "description_zh": "每日/每周风险线索事实汇总",
+      "expected_data": "已有风险事件与观察日期",
+      "limitations_zh": "不负责实际任务调度",
+      "execution_class": "research",
+      "parameters": [
+        {
+          "name": "alerts",
+          "required": true,
+          "default": null,
+          "type_hint": "list[dict]"
+        },
+        {
+          "name": "as_of",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        },
+        {
+          "name": "period_label",
+          "required": false,
+          "default": "daily",
+          "type_hint": "str"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    },
+    {
+      "name": "regguard.build_evidence_pack",
+      "description_zh": "供受控LLM解读的引用证据包",
+      "expected_data": "HTTPS来源/披露日期/原文摘录",
+      "limitations_zh": "无原文则不可编造；不负责调用外部模型",
+      "execution_class": "research",
+      "parameters": [
+        {
+          "name": "company",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        },
+        {
+          "name": "question",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        },
+        {
+          "name": "evidence",
+          "required": true,
+          "default": null,
+          "type_hint": "list[dict]"
+        },
+        {
+          "name": "as_of",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    },
+    {
+      "name": "regguard.dataset_coverage",
+      "description_zh": "查看比赛数据字典与RegGuard字段覆盖",
+      "expected_data": "catalog元数据",
+      "limitations_zh": "不是实际数据行或token授权证明",
+      "execution_class": "research",
+      "parameters": [
+        {
+          "name": "catalog_path",
+          "required": false,
+          "default": null,
+          "type_hint": "str | None"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    },
+    {
+      "name": "regguard.knowledge_search",
+      "description_zh": "查询离线人工整理的会计/监管研究知识卡及引用",
+      "expected_data": "用户研究问题",
+      "limitations_zh": "不是实时法规库，不代表某法现行有效",
+      "execution_class": "research",
+      "parameters": [
+        {
+          "name": "query",
+          "required": true,
+          "default": null,
+          "type_hint": "str"
+        },
+        {
+          "name": "limit",
+          "required": false,
+          "default": 5,
+          "type_hint": "int"
+        },
+        {
+          "name": "cards",
+          "required": false,
+          "default": null,
+          "type_hint": "list[dict] | None"
+        }
+      ],
+      "registered": true,
+      "side_effects": "none",
+      "blocks_compatible": "adapter_required"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+announcement_date,ticker,security_name,announcement_title,url
+20260601,DEMO001.SZ,虚构甲公司,关于变更会计师事务所的公告,https://example.org/fictional/audit.pdf
+20260603,DEMO001.SZ,虚构甲公司,关于会计差错更正的公告,https://example.org/fictional/restatement.pdf
+20260701,DEMO002.SH,虚构乙公司,关于对外担保事项的公告,https://example.org/fictional/guarantee.pdf
+20260801,DEMO003.SZ,虚构丙公司,关于重大诉讼进展的公告,https://example.org/fictional/litigation.pdf

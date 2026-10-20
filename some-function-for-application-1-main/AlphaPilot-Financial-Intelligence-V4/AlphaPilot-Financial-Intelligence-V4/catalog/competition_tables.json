@@ -1,0 +1,3765 @@
+{
+  "version": "2026-10",
+  "source": "Dataset Overview.xlsx (metadata only; no actual rows)",
+  "table_count": 37,
+  "field_count": 856,
+  "tables": {
+    "cd80_stock_basic": {
+      "name": "cd80_stock_basic",
+      "time_range": "1991.04-2026.08",
+      "source_url": "https://tushare.pro/document/2?doc_id=25",
+      "description": "Basic information data, including stock code, name, listing date, delisting date, etc.",
+      "fields": [
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "symbol",
+          "description": "Stock Code"
+        },
+        {
+          "field": "name",
+          "description": "Name"
+        },
+        {
+          "field": "area",
+          "description": "Area"
+        },
+        {
+          "field": "industry",
+          "description": "Industry"
+        },
+        {
+          "field": "list_date",
+          "description": "Listing Date"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_stock_basic_calendar": {
+      "name": "cd80_stock_basic_calendar",
+      "time_range": "1990.12-2025.12",
+      "source_url": "https://tushare.pro/document/2?doc_id=26",
+      "description": "Trading calendar data for major exchanges",
+      "fields": [
+        {
+          "field": "id",
+          "description": "Record ID"
+        },
+        {
+          "field": "exchange",
+          "description": "Exchange"
+        },
+        {
+          "field": "cal_date",
+          "description": "Calendar Date"
+        },
+        {
+          "field": "is_open",
+          "description": "Is Open"
+        },
+        {
+          "field": "pretrade_date",
+          "description": "Previous Trading Date"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_stock_market_pr_factor": {
+      "name": "cd80_stock_market_pr_factor",
+      "time_range": "2024.07-2026.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=28",
+      "description": "Stock adjustment factors. You can retrieve all historical adjustment factors for a single stock, or retrieve the adjustment factors for all stocks on a single day.",
+      "fields": [
+        {
+          "field": "id",
+          "description": "Record ID"
+        },
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "trade_date",
+          "description": "Trade Date"
+        },
+        {
+          "field": "adj_factor",
+          "description": "Adjustment Factor"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_stock_fin_income": {
+      "name": "cd80_stock_fin_income",
+      "time_range": "2024.03-2026.08",
+      "source_url": "https://tushare.pro/document/2?doc_id=33",
+      "description": "Financial income statement data of listed companies.",
+      "fields": [
+        {
+          "field": "id",
+          "description": "Record ID"
+        },
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "ann_date",
+          "description": "Announcement Date"
+        },
+        {
+          "field": "f_ann_date",
+          "description": "Actual Announcement Date"
+        },
+        {
+          "field": "end_date",
+          "description": "Reporting Period"
+        },
+        {
+          "field": "report_type",
+          "description": "Report Type"
+        },
+        {
+          "field": "comp_type",
+          "description": "Company Type"
+        },
+        {
+          "field": "end_type",
+          "description": "Report Period Type"
+        },
+        {
+          "field": "basic_eps",
+          "description": "Basic Earnings Per Share"
+        },
+        {
+          "field": "diluted_eps",
+          "description": "Diluted Earnings Per Share"
+        },
+        {
+          "field": "total_revenue",
+          "description": "Total Revenue"
+        },
+        {
+          "field": "revenue",
+          "description": "Revenue"
+        },
+        {
+          "field": "int_income",
+          "description": "Interest Income"
+        },
+        {
+          "field": "prem_earned",
+          "description": "Premium Earned"
+        },
+        {
+          "field": "comm_income",
+          "description": "Commission Income"
+        },
+        {
+          "field": "n_commis_income",
+          "description": "Net Commission Income"
+        },
+        {
+          "field": "n_oth_income",
+          "description": "Other Operating Net Income"
+        },
+        {
+          "field": "n_oth_b_income",
+          "description": "Add: Other Business Net Income"
+        },
+        {
+          "field": "prem_income",
+          "description": "Premium Income"
+        },
+        {
+          "field": "out_prem",
+          "description": "Less: Reinsurance Premiums"
+        },
+        {
+          "field": "une_prem_reser",
+          "description": "Withdrawal of Unexpired Premium Reserve"
+        },
+        {
+          "field": "reins_income",
+          "description": "Including: Reinsurance Premium Income"
+        },
+        {
+          "field": "n_sec_tb_income",
+          "description": "Net Income from Securities Trading Agency Business"
+        },
+        {
+          "field": "n_sec_uw_income",
+          "description": "Net Income from Securities Underwriting Business"
+        },
+        {
+          "field": "n_asset_mg_income",
+          "description": "Net Income from Entrusted Customer Asset Management Business"
+        },
+        {
+          "field": "oth_b_income",
+          "description": "Other Business Income"
+        },
+        {
+          "field": "fv_value_chg_gain",
+          "description": "Add: Net Gain from Changes in Fair Value"
+        },
+        {
+          "field": "invest_income",
+          "description": "Add: Net Investment Income"
+        },
+        {
+          "field": "ass_invest_income",
+          "description": "Including: Investment Income from Associates and Joint Ventures"
+        },
+        {
+          "field": "forex_gain",
+          "description": "Add: Net Exchange Gain"
+        },
+        {
+          "field": "total_cogs",
+          "description": "Total Operating Cost"
+        },
+        {
+          "field": "oper_cost",
+          "description": "Less: Operating Cost"
+        },
+        {
+          "field": "int_exp",
+          "description": "Less: Interest Expense"
+        },
+        {
+          "field": "comm_exp",
+          "description": "Less: Commission Expense"
+        },
+        {
+          "field": "biz_tax_surchg",
+          "description": "Less: Business Tax and Surcharges"
+        },
+        {
+          "field": "sell_exp",
+          "description": "Less: Selling Expenses"
+        },
+        {
+          "field": "admin_exp",
+          "description": "Less: Administrative Expenses"
+        },
+        {
+          "field": "fin_exp",
+          "description": "Less: Financial Expenses"
+        },
+        {
+          "field": "assets_impair_loss",
+          "description": "Less: Asset Impairment Loss"
+        },
+        {
+          "field": "prem_refund",
+          "description": "Premium Refund"
+        },
+        {
+          "field": "compens_payout",
+          "description": "Compensation Payout"
+        },
+        {
+          "field": "reser_insur_liab",
+          "description": "Withdrawal of Insurance Liability Reserve"
+        },
+        {
+          "field": "div_payt",
+          "description": "Policyholder Dividend Payout"
+        },
+        {
+          "field": "reins_exp",
+          "description": "Reinsurance Expense"
+        },
+        {
+          "field": "oper_exp",
+          "description": "Operating Expenditure"
+        },
+        {
+          "field": "compens_payout_refu",
+          "description": "Less: Refund of Compensation Payout"
+        },
+        {
+          "field": "insur_reser_refu",
+          "description": "Less: Refund of Insurance Liability Reserve"
+        },
+        {
+          "field": "reins_cost_refund",
+          "description": "Less: Refund of Reinsurance Cost"
+        },
+        {
+          "field": "other_bus_cost",
+          "description": "Other Business Cost"
+        },
+        {
+          "field": "operate_profit",
+          "description": "Operating Profit"
+        },
+        {
+          "field": "non_oper_income",
+          "description": "Add: Non-operating Income"
+        },
+        {
+          "field": "non_oper_exp",
+          "description": "Less: Non-operating Expense"
+        },
+        {
+          "field": "nca_disploss",
+          "description": "Including: Less: Net Loss from Disposal of Non-current Assets"
+        },
+        {
+          "field": "total_profit",
+          "description": "Total Profit"
+        },
+        {
+          "field": "income_tax",
+          "description": "Income Tax Expense"
+        },
+        {
+          "field": "n_income",
+          "description": "Net Income (Including Minority Interests)"
+        },
+        {
+          "field": "n_income_attr_p",
+          "description": "Net Income (Excluding Minority Interests)"
+        },
+        {
+          "field": "minority_gain",
+          "description": "Minority Interests Gain"
+        },
+        {
+          "field": "oth_compr_income",
+          "description": "Other Comprehensive Income"
+        },
+        {
+          "field": "t_compr_income",
+          "description": "Total Comprehensive Income"
+        },
+        {
+          "field": "compr_inc_attr_p",
+          "description": "Total Comprehensive Income Attributable to Parent Company"
+        },
+        {
+          "field": "compr_inc_attr_m_s",
+          "description": "Total Comprehensive Income Attributable to Minority Shareholders"
+        },
+        {
+          "field": "ebit",
+          "description": "Earnings Before Interest and Taxes"
+        },
+        {
+          "field": "ebitda",
+          "description": "Earnings Before Interest, Taxes, Depreciation and Amortization"
+        },
+        {
+          "field": "insurance_exp",
+          "description": "Insurance Business Expenditure"
+        },
+        {
+          "field": "undist_profit",
+          "description": "Undistributed Profit at Beginning of Year"
+        },
+        {
+          "field": "distable_profit",
+          "description": "Distributable Profit"
+        },
+        {
+          "field": "rd_exp",
+          "description": "R&D Expenses"
+        },
+        {
+          "field": "fin_exp_int_exp",
+          "description": "Financial Expenses: Interest Expense"
+        },
+        {
+          "field": "fin_exp_int_inc",
+          "description": "Financial Expenses: Interest Income"
+        },
+        {
+          "field": "transfer_surplus_rese",
+          "description": "Transfer to Surplus Reserve"
+        },
+        {
+          "field": "transfer_housing_imprest",
+          "description": "Transfer to Housing Revolving Fund"
+        },
+        {
+          "field": "transfer_oth",
+          "description": "Other Transfers"
+        },
+        {
+          "field": "adj_lossgain",
+          "description": "Adjustment of Prior Year Profit and Loss"
+        },
+        {
+          "field": "withdra_legal_surplus",
+          "description": "Withdrawal of Legal Surplus Reserve"
+        },
+        {
+          "field": "withdra_legal_pubfund",
+          "description": "Withdrawal of Legal Public Welfare Fund"
+        },
+        {
+          "field": "withdra_biz_devfund",
+          "description": "Withdrawal of Enterprise Development Fund"
+        },
+        {
+          "field": "withdra_rese_fund",
+          "description": "Withdrawal of Reserve Fund"
+        },
+        {
+          "field": "withdra_oth_ersu",
+          "description": "Withdrawal of Discretionary Surplus Reserve"
+        },
+        {
+          "field": "workers_welfare",
+          "description": "Employee Bonus and Welfare"
+        },
+        {
+          "field": "distr_profit_shrhder",
+          "description": "Profit Available for Distribution to Shareholders"
+        },
+        {
+          "field": "prfshare_payable_dvd",
+          "description": "Dividends Payable on Preferred Shares"
+        },
+        {
+          "field": "comshare_payable_dvd",
+          "description": "Dividends Payable on Common Shares"
+        },
+        {
+          "field": "capit_comstock_div",
+          "description": "Common Stock Dividends Converted to Share Capital"
+        },
+        {
+          "field": "continued_net_profit",
+          "description": "Net Profit from Continuing Operations"
+        },
+        {
+          "field": "update_flag",
+          "description": "Update Flag"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_stock_fin_balancesheet": {
+      "name": "cd80_stock_fin_balancesheet",
+      "time_range": "2026.08-2026.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=36",
+      "description": "Balance sheet of listed companies.",
+      "fields": [
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "ann_date",
+          "description": "Announcement Date"
+        },
+        {
+          "field": "f_ann_date",
+          "description": "Actual Announcement Date"
+        },
+        {
+          "field": "end_date",
+          "description": "Reporting Period"
+        },
+        {
+          "field": "report_type",
+          "description": "Report Type"
+        },
+        {
+          "field": "comp_type",
+          "description": "Company Type"
+        },
+        {
+          "field": "end_type",
+          "description": "Report Period Type"
+        },
+        {
+          "field": "total_share",
+          "description": "Total Shares at Period End"
+        },
+        {
+          "field": "cap_rese",
+          "description": "Capital Reserve"
+        },
+        {
+          "field": "undistr_porfit",
+          "description": "Undistributed Profit"
+        },
+        {
+          "field": "surplus_rese",
+          "description": "Surplus Reserve"
+        },
+        {
+          "field": "special_rese",
+          "description": "Special Reserve"
+        },
+        {
+          "field": "money_cap",
+          "description": "Monetary Funds"
+        },
+        {
+          "field": "trad_asset",
+          "description": "Trading Financial Assets"
+        },
+        {
+          "field": "notes_receiv",
+          "description": "Notes Receivable"
+        },
+        {
+          "field": "accounts_receiv",
+          "description": "Accounts Receivable"
+        },
+        {
+          "field": "oth_receiv",
+          "description": "Other Receivables"
+        },
+        {
+          "field": "prepayment",
+          "description": "Prepayments"
+        },
+        {
+          "field": "div_receiv",
+          "description": "Dividends Receivable"
+        },
+        {
+          "field": "int_receiv",
+          "description": "Interest Receivable"
+        },
+        {
+          "field": "inventories",
+          "description": "Inventories"
+        },
+        {
+          "field": "amor_exp",
+          "description": "Amortization Expenses"
+        },
+        {
+          "field": "nca_within_1y",
+          "description": "Non-current Assets Due Within 1 Year"
+        },
+        {
+          "field": "sett_rsrv",
+          "description": "Settlement Reserve"
+        },
+        {
+          "field": "loanto_oth_bank_fi",
+          "description": "Loans to Other Banks and Financial Institutions"
+        },
+        {
+          "field": "premium_receiv",
+          "description": "Premiums Receivable"
+        },
+        {
+          "field": "reinsur_receiv",
+          "description": "Reinsurance Receivables"
+        },
+        {
+          "field": "reinsur_res_receiv",
+          "description": "Reinsurance Contract Reserves Receivable"
+        },
+        {
+          "field": "pur_resale_fa",
+          "description": "Financial Assets Purchased under Resale Agreements"
+        },
+        {
+          "field": "oth_cur_assets",
+          "description": "Other Current Assets"
+        },
+        {
+          "field": "total_cur_assets",
+          "description": "Total Current Assets"
+        },
+        {
+          "field": "fa_avail_for_sale",
+          "description": "Financial Assets Available for Sale"
+        },
+        {
+          "field": "htm_invest",
+          "description": "Held-to-Maturity Investments"
+        },
+        {
+          "field": "lt_eqt_invest",
+          "description": "Long-term Equity Investments"
+        },
+        {
+          "field": "invest_real_estate",
+          "description": "Investment Real Estate"
+        },
+        {
+          "field": "time_deposits",
+          "description": "Time Deposits"
+        },
+        {
+          "field": "oth_assets",
+          "description": "Other Assets"
+        },
+        {
+          "field": "lt_rec",
+          "description": "Long-term Receivables"
+        },
+        {
+          "field": "fix_assets",
+          "description": "Fixed Assets"
+        },
+        {
+          "field": "cip",
+          "description": "Construction in Progress"
+        },
+        {
+          "field": "const_materials",
+          "description": "Construction Materials"
+        },
+        {
+          "field": "fixed_assets_disp",
+          "description": "Disposal of Fixed Assets"
+        },
+        {
+          "field": "produc_bio_assets",
+          "description": "Productive Biological Assets"
+        },
+        {
+          "field": "oil_and_gas_assets",
+          "description": "Oil and Gas Assets"
+        },
+        {
+          "field": "intan_assets",
+          "description": "Intangible Assets"
+        },
+        {
+          "field": "r_and_d",
+          "description": "R&D Expenditure"
+        },
+        {
+          "field": "goodwill",
+          "description": "Goodwill"
+        },
+        {
+          "field": "lt_amor_exp",
+          "description": "Long-term Amortization Expenses"
+        },
+        {
+          "field": "defer_tax_assets",
+          "description": "Deferred Tax Assets"
+        },
+        {
+          "field": "decr_in_disbur",
+          "description": "Loans and Advances to Customers"
+        },
+        {
+          "field": "oth_nca",
+          "description": "Other Non-current Assets"
+        },
+        {
+          "field": "total_nca",
+          "description": "Total Non-current Assets"
+        },
+        {
+          "field": "cash_reser_cb",
+          "description": "Cash and Deposits with Central Bank"
+        },
+        {
+          "field": "depos_in_oth_bfi",
+          "description": "Deposits with Banks and Other Financial Institutions"
+        },
+        {
+          "field": "prec_metals",
+          "description": "Precious Metals"
+        },
+        {
+          "field": "deriv_assets",
+          "description": "Derivative Financial Assets"
+        },
+        {
+          "field": "rr_reins_une_prem",
+          "description": "Reinsurance Unexpired Premium Reserve Receivable"
+        },
+        {
+          "field": "rr_reins_outstd_cla",
+          "description": "Reinsurance Outstanding Claims Reserve Receivable"
+        },
+        {
+          "field": "rr_reins_lins_liab",
+          "description": "Reinsurance Life Insurance Reserve Receivable"
+        },
+        {
+          "field": "rr_reins_lthins_liab",
+          "description": "Reinsurance Long-term Health Insurance Reserve Receivable"
+        },
+        {
+          "field": "refund_depos",
+          "description": "Refundable Deposits"
+        },
+        {
+          "field": "ph_pledge_loans",
+          "description": "Policyholder Pledge Loans"
+        },
+        {
+          "field": "refund_cap_depos",
+          "description": "Refundable Capital Deposits"
+        },
+        {
+          "field": "indep_acct_assets",
+          "description": "Independent Account Assets"
+        },
+        {
+          "field": "client_depos",
+          "description": "Including: Client Fund Deposits"
+        },
+        {
+          "field": "client_prov",
+          "description": "Including: Client Provisions"
+        },
+        {
+          "field": "transac_seat_fee",
+          "description": "Including: Trading Seat Fees"
+        },
+        {
+          "field": "invest_as_receiv",
+          "description": "Investments Receivable"
+        },
+        {
+          "field": "total_assets",
+          "description": "Total Assets"
+        },
+        {
+          "field": "lt_borr",
+          "description": "Long-term Borrowings"
+        },
+        {
+          "field": "st_borr",
+          "description": "Short-term Borrowings"
+        },
+        {
+          "field": "cb_borr",
+          "description": "Borrowings from Central Bank"
+        },
+        {
+          "field": "depos_ib_deposits",
+          "description": "Deposits from Banks and Other Financial Institutions"
+        },
+        {
+          "field": "loan_oth_bank",
+          "description": "Interbank Borrowings"
+        },
+        {
+          "field": "trading_fl",
+          "description": "Trading Financial Liabilities"
+        },
+        {
+          "field": "notes_payable",
+          "description": "Notes Payable"
+        },
+        {
+          "field": "acct_payable",
+          "description": "Accounts Payable"
+        },
+        {
+          "field": "adv_receipts",
+          "description": "Advances from Customers"
+        },
+        {
+          "field": "sold_for_repur_fa",
+          "description": "Financial Assets Sold under Repurchase Agreements"
+        },
+        {
+          "field": "comm_payable",
+          "description": "Commissions Payable"
+        },
+        {
+          "field": "payroll_payable",
+          "description": "Employee Benefits Payable"
+        },
+        {
+          "field": "taxes_payable",
+          "description": "Taxes Payable"
+        },
+        {
+          "field": "int_payable",
+          "description": "Interest Payable"
+        },
+        {
+          "field": "div_payable",
+          "description": "Dividends Payable"
+        },
+        {
+          "field": "oth_payable",
+          "description": "Other Payables"
+        },
+        {
+          "field": "acc_exp",
+          "description": "Accrued Expenses"
+        },
+        {
+          "field": "deferred_inc",
+          "description": "Deferred Income"
+        },
+        {
+          "field": "st_bonds_payable",
+          "description": "Short-term Bonds Payable"
+        },
+        {
+          "field": "payable_to_reinsurer",
+          "description": "Payable to Reinsurers"
+        },
+        {
+          "field": "rsrv_insur_cont",
+          "description": "Insurance Contract Reserves"
+        },
+        {
+          "field": "acting_trading_sec",
+          "description": "Securities Trading Agency Payables"
+        },
+        {
+          "field": "acting_uw_sec",
+          "description": "Securities Underwriting Agency Payables"
+        },
+        {
+          "field": "non_cur_liab_due_1y",
+          "description": "Non-current Liabilities Due Within 1 Year"
+        },
+        {
+          "field": "oth_cur_liab",
+          "description": "Other Current Liabilities"
+        },
+        {
+          "field": "total_cur_liab",
+          "description": "Total Current Liabilities"
+        },
+        {
+          "field": "bond_payable",
+          "description": "Bonds Payable"
+        },
+        {
+          "field": "lt_payable",
+          "description": "Long-term Payables"
+        },
+        {
+          "field": "specific_payables",
+          "description": "Specific Payables"
+        },
+        {
+          "field": "estimated_liab",
+          "description": "Estimated Liabilities"
+        },
+        {
+          "field": "defer_tax_liab",
+          "description": "Deferred Tax Liabilities"
+        },
+        {
+          "field": "defer_inc_non_cur_liab",
+          "description": "Deferred Income - Non-current Liabilities"
+        },
+        {
+          "field": "oth_ncl",
+          "description": "Other Non-current Liabilities"
+        },
+        {
+          "field": "total_ncl",
+          "description": "Total Non-current Liabilities"
+        },
+        {
+          "field": "depos_oth_bfi",
+          "description": "Deposits from Banks and Other Financial Institutions"
+        },
+        {
+          "field": "deriv_liab",
+          "description": "Derivative Financial Liabilities"
+        },
+        {
+          "field": "depos",
+          "description": "Deposits"
+        },
+        {
+          "field": "agency_bus_liab",
+          "description": "Agency Business Liabilities"
+        },
+        {
+          "field": "oth_liab",
+          "description": "Other Liabilities"
+        },
+        {
+          "field": "prem_receiv_adva",
+          "description": "Premiums Received in Advance"
+        },
+        {
+          "field": "depos_received",
+          "description": "Deposits Received"
+        },
+        {
+          "field": "ph_invest",
+          "description": "Policyholder Deposits and Investment Funds"
+        },
+        {
+          "field": "reser_une_prem",
+          "description": "Unexpired Liability Reserve"
+        },
+        {
+          "field": "reser_outstd_claims",
+          "description": "Outstanding Claims Reserve"
+        },
+        {
+          "field": "reser_lins_liab",
+          "description": "Life Insurance Liability Reserve"
+        },
+        {
+          "field": "reser_lthins_liab",
+          "description": "Long-term Health Insurance Liability Reserve"
+        },
+        {
+          "field": "indept_acc_liab",
+          "description": "Independent Account Liabilities"
+        },
+        {
+          "field": "pledge_borr",
+          "description": "Including: Pledge Borrowings"
+        },
+        {
+          "field": "indem_payable",
+          "description": "Indemnity Payable"
+        },
+        {
+          "field": "policy_div_payable",
+          "description": "Policyholder Dividend Payable"
+        },
+        {
+          "field": "total_liab",
+          "description": "Total Liabilities"
+        },
+        {
+          "field": "treasury_share",
+          "description": "Less: Treasury Shares"
+        },
+        {
+          "field": "ordin_risk_reser",
+          "description": "General Risk Reserve"
+        },
+        {
+          "field": "forex_differ",
+          "description": "Foreign Currency Translation Difference"
+        },
+        {
+          "field": "invest_loss_unconf",
+          "description": "Unconfirmed Investment Loss"
+        },
+        {
+          "field": "minority_int",
+          "description": "Minority Interests"
+        },
+        {
+          "field": "total_hldr_eqy_exc_min_int",
+          "description": "Total Shareholders' Equity (Excluding Minority Interests)"
+        },
+        {
+          "field": "total_hldr_eqy_inc_min_int",
+          "description": "Total Shareholders' Equity (Including Minority Interests)"
+        },
+        {
+          "field": "total_liab_hldr_eqy",
+          "description": "Total Liabilities and Shareholders' Equity"
+        },
+        {
+          "field": "lt_payroll_payable",
+          "description": "Long-term Employee Benefits Payable"
+        },
+        {
+          "field": "oth_comp_income",
+          "description": "Other Comprehensive Income"
+        },
+        {
+          "field": "oth_eqt_tools",
+          "description": "Other Equity Instruments"
+        },
+        {
+          "field": "oth_eqt_tools_p_shr",
+          "description": "Other Equity Instruments (Preferred Shares)"
+        },
+        {
+          "field": "lending_funds",
+          "description": "Lending Funds"
+        },
+        {
+          "field": "acc_receivable",
+          "description": "Receivables"
+        },
+        {
+          "field": "st_fin_payable",
+          "description": "Short-term Financing Payable"
+        },
+        {
+          "field": "payables",
+          "description": "Payables"
+        },
+        {
+          "field": "hfs_assets",
+          "description": "Assets Held for Sale"
+        },
+        {
+          "field": "hfs_sales",
+          "description": "Liabilities Held for Sale"
+        },
+        {
+          "field": "cost_fin_assets",
+          "description": "Financial Assets Measured at Amortized Cost"
+        },
+        {
+          "field": "fair_value_fin_assets",
+          "description": "Financial Assets Measured at Fair Value through Other Comprehensive Income"
+        },
+        {
+          "field": "contract_assets",
+          "description": "Contract Assets"
+        },
+        {
+          "field": "contract_liab",
+          "description": "Contract Liabilities"
+        },
+        {
+          "field": "accounts_receiv_bill",
+          "description": "Notes and Accounts Receivable"
+        },
+        {
+          "field": "accounts_pay",
+          "description": "Accounts Payable"
+        },
+        {
+          "field": "oth_rcv_total",
+          "description": "Other Receivables (Total)"
+        },
+        {
+          "field": "fix_assets_total",
+          "description": "Total Fixed Assets"
+        },
+        {
+          "field": "cip_total",
+          "description": "Total Construction in Progress"
+        },
+        {
+          "field": "oth_pay_total",
+          "description": "Other Payables (Total)"
+        },
+        {
+          "field": "long_pay_total",
+          "description": "Long-term Payables (Total)"
+        },
+        {
+          "field": "debt_invest",
+          "description": "Debt Investments"
+        },
+        {
+          "field": "oth_debt_invest",
+          "description": "Other Debt Investments"
+        },
+        {
+          "field": "update_flag",
+          "description": "Update Flag"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_stock_fin_cashflow": {
+      "name": "cd80_stock_fin_cashflow",
+      "time_range": "2024.07-2026.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=44",
+      "description": "Cash flow statement of listed companies.",
+      "fields": [
+        {
+          "field": "id",
+          "description": "Record ID"
+        },
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "ann_date",
+          "description": "Announcement Date"
+        },
+        {
+          "field": "f_ann_date",
+          "description": "Actual Announcement Date"
+        },
+        {
+          "field": "end_date",
+          "description": "Reporting Period"
+        },
+        {
+          "field": "comp_type",
+          "description": "Company Type"
+        },
+        {
+          "field": "report_type",
+          "description": "Report Type"
+        },
+        {
+          "field": "end_type",
+          "description": "Report Period Type"
+        },
+        {
+          "field": "net_profit",
+          "description": "Net Profit"
+        },
+        {
+          "field": "finan_exp",
+          "description": "Financial Expenses"
+        },
+        {
+          "field": "c_fr_sale_sg",
+          "description": "Cash Received from Sales of Goods and Rendering of Services"
+        },
+        {
+          "field": "recp_tax_rends",
+          "description": "Tax Refunds Received"
+        },
+        {
+          "field": "n_depos_incr_fi",
+          "description": "Net Increase in Customer Deposits and Deposits from Banks and Other Financial Institutions"
+        },
+        {
+          "field": "n_incr_loans_cb",
+          "description": "Net Increase in Borrowings from Central Bank"
+        },
+        {
+          "field": "n_inc_borr_oth_fi",
+          "description": "Net Increase in Funds Borrowed from Other Financial Institutions"
+        },
+        {
+          "field": "prem_fr_orig_contr",
+          "description": "Cash Received from Original Insurance Contracts"
+        },
+        {
+          "field": "n_incr_insured_dep",
+          "description": "Net Increase in Policyholder Deposits"
+        },
+        {
+          "field": "n_reinsur_prem",
+          "description": "Net Cash Received from Reinsurance Business"
+        },
+        {
+          "field": "n_incr_disp_tfa",
+          "description": "Net Increase in Disposal of Trading Financial Assets"
+        },
+        {
+          "field": "ifc_cash_incr",
+          "description": "Net Increase in Cash from Interest and Commission Received"
+        },
+        {
+          "field": "n_incr_disp_faas",
+          "description": "Net Increase in Disposal of Financial Assets Available for Sale"
+        },
+        {
+          "field": "n_incr_loans_oth_bank",
+          "description": "Net Increase in Funds Borrowed from Other Banks"
+        },
+        {
+          "field": "n_cap_incr_repur",
+          "description": "Net Increase in Funds from Repurchase Business"
+        },
+        {
+          "field": "c_fr_oth_operate_a",
+          "description": "Other Cash Received Relating to Operating Activities"
+        },
+        {
+          "field": "c_inf_fr_operate_a",
+          "description": "Subtotal of Cash Inflows from Operating Activities"
+        },
+        {
+          "field": "c_paid_goods_s",
+          "description": "Cash Paid for Goods and Services"
+        },
+        {
+          "field": "c_paid_to_for_empl",
+          "description": "Cash Paid to and on Behalf of Employees"
+        },
+        {
+          "field": "c_paid_for_taxes",
+          "description": "Taxes Paid"
+        },
+        {
+          "field": "n_incr_clt_loan_adv",
+          "description": "Net Increase in Loans and Advances to Customers"
+        },
+        {
+          "field": "n_incr_dep_cbob",
+          "description": "Net Increase in Deposits with Central Bank and Banks"
+        },
+        {
+          "field": "c_pay_claims_orig_inco",
+          "description": "Cash Paid for Original Insurance Contract Claims"
+        },
+        {
+          "field": "pay_handling_chrg",
+          "description": "Cash Paid for Handling Charges"
+        },
+        {
+          "field": "pay_comm_insur_plcy",
+          "description": "Cash Paid for Policyholder Dividends"
+        },
+        {
+          "field": "oth_cash_pay_oper_act",
+          "description": "Other Cash Paid Relating to Operating Activities"
+        },
+        {
+          "field": "st_cash_out_act",
+          "description": "Subtotal of Cash Outflows from Operating Activities"
+        },
+        {
+          "field": "n_cashflow_act",
+          "description": "Net Cash Flow from Operating Activities"
+        },
+        {
+          "field": "oth_recp_ral_inv_act",
+          "description": "Other Cash Received Relating to Investing Activities"
+        },
+        {
+          "field": "c_disp_withdrwl_invest",
+          "description": "Cash Received from Recovery of Investments"
+        },
+        {
+          "field": "c_recp_return_invest",
+          "description": "Cash Received from Investment Income"
+        },
+        {
+          "field": "n_recp_disp_fiolta",
+          "description": "Net Cash Received from Disposal of Fixed Assets, Intangible Assets and Other Long-term Assets"
+        },
+        {
+          "field": "n_recp_disp_sobu",
+          "description": "Net Cash Received from Disposal of Subsidiaries and Other Business Units"
+        },
+        {
+          "field": "stot_inflows_inv_act",
+          "description": "Subtotal of Cash Inflows from Investing Activities"
+        },
+        {
+          "field": "c_pay_acq_const_fiolta",
+          "description": "Cash Paid for Acquisition and Construction of Fixed Assets, Intangible Assets and Other Long-term Assets"
+        },
+        {
+          "field": "c_paid_invest",
+          "description": "Cash Paid for Investments"
+        },
+        {
+          "field": "n_disp_subs_oth_biz",
+          "description": "Net Cash Paid for Acquisition of Subsidiaries and Other Business Units"
+        },
+        {
+          "field": "oth_pay_ral_inv_act",
+          "description": "Other Cash Paid Relating to Investing Activities"
+        },
+        {
+          "field": "n_incr_pledge_loan",
+          "description": "Net Increase in Pledge Loans"
+        },
+        {
+          "field": "stot_out_inv_act",
+          "description": "Subtotal of Cash Outflows from Investing Activities"
+        },
+        {
+          "field": "n_cashflow_inv_act",
+          "description": "Net Cash Flow from Investing Activities"
+        },
+        {
+          "field": "c_recp_borrow",
+          "description": "Cash Received from Borrowings"
+        },
+        {
+          "field": "proc_issue_bonds",
+          "description": "Cash Received from Issuance of Bonds"
+        },
+        {
+          "field": "oth_cash_recp_ral_fnc_act",
+          "description": "Other Cash Received Relating to Financing Activities"
+        },
+        {
+          "field": "stot_cash_in_fnc_act",
+          "description": "Subtotal of Cash Inflows from Financing Activities"
+        },
+        {
+          "field": "free_cashflow",
+          "description": "Free Cash Flow of Enterprise"
+        },
+        {
+          "field": "c_prepay_amt_borr",
+          "description": "Cash Paid for Repayment of Debt"
+        },
+        {
+          "field": "c_pay_dist_dpcp_int_exp",
+          "description": "Cash Paid for Distribution of Dividends, Profits or Payment of Interest"
+        },
+        {
+          "field": "incl_dvd_profit_paid_sc_ms",
+          "description": "Including: Dividends and Profits Paid by Subsidiaries to Minority Shareholders"
+        },
+        {
+          "field": "oth_cashpay_ral_fnc_act",
+          "description": "Other Cash Paid Relating to Financing Activities"
+        },
+        {
+          "field": "stot_cashout_fnc_act",
+          "description": "Subtotal of Cash Outflows from Financing Activities"
+        },
+        {
+          "field": "n_cash_flows_fnc_act",
+          "description": "Net Cash Flow from Financing Activities"
+        },
+        {
+          "field": "eff_fx_flu_cash",
+          "description": "Effect of Exchange Rate Changes on Cash"
+        },
+        {
+          "field": "n_incr_cash_cash_equ",
+          "description": "Net Increase in Cash and Cash Equivalents"
+        },
+        {
+          "field": "c_cash_equ_beg_period",
+          "description": "Cash and Cash Equivalents at Beginning of Period"
+        },
+        {
+          "field": "c_cash_equ_end_period",
+          "description": "Cash and Cash Equivalents at End of Period"
+        },
+        {
+          "field": "c_recp_cap_contrib",
+          "description": "Cash Received from Absorbing Investments"
+        },
+        {
+          "field": "incl_cash_rec_saims",
+          "description": "Including: Cash Received by Subsidiaries from Absorbing Minority Shareholder Investments"
+        },
+        {
+          "field": "uncon_invest_loss",
+          "description": "Unconfirmed Investment Loss"
+        },
+        {
+          "field": "prov_depr_assets",
+          "description": "Add: Provision for Asset Impairment"
+        },
+        {
+          "field": "depr_fa_coga_dpba",
+          "description": "Depreciation of Fixed Assets, Depletion of Oil and Gas Assets, Depreciation of Productive Biological Assets"
+        },
+        {
+          "field": "amort_intang_assets",
+          "description": "Amortization of Intangible Assets"
+        },
+        {
+          "field": "lt_amort_deferred_exp",
+          "description": "Amortization of Long-term Deferred Expenses"
+        },
+        {
+          "field": "decr_deferred_exp",
+          "description": "Decrease in Deferred Expenses"
+        },
+        {
+          "field": "incr_acc_exp",
+          "description": "Increase in Accrued Expenses"
+        },
+        {
+          "field": "loss_disp_fiolta",
+          "description": "Loss on Disposal of Fixed Assets, Intangible Assets and Other Long-term Assets"
+        },
+        {
+          "field": "loss_scr_fa",
+          "description": "Loss on Scrapping of Fixed Assets"
+        },
+        {
+          "field": "loss_fv_chg",
+          "description": "Loss on Changes in Fair Value"
+        },
+        {
+          "field": "invest_loss",
+          "description": "Investment Loss"
+        },
+        {
+          "field": "decr_def_inc_tax_assets",
+          "description": "Decrease in Deferred Tax Assets"
+        },
+        {
+          "field": "incr_def_inc_tax_liab",
+          "description": "Increase in Deferred Tax Liabilities"
+        },
+        {
+          "field": "decr_inventories",
+          "description": "Decrease in Inventories"
+        },
+        {
+          "field": "decr_oper_payable",
+          "description": "Decrease in Operating Receivables"
+        },
+        {
+          "field": "incr_oper_payable",
+          "description": "Increase in Operating Payables"
+        },
+        {
+          "field": "others",
+          "description": "Others"
+        },
+        {
+          "field": "im_net_cashflow_oper_act",
+          "description": "Net Cash Flow from Operating Activities (Indirect Method)"
+        },
+        {
+          "field": "conv_debt_into_cap",
+          "description": "Conversion of Debt into Capital"
+        },
+        {
+          "field": "conv_copbonds_due_within_1y",
+          "description": "Convertible Corporate Bonds Due Within 1 Year"
+        },
+        {
+          "field": "fa_fnc_leases",
+          "description": "Fixed Assets under Finance Leases"
+        },
+        {
+          "field": "im_n_incr_cash_equ",
+          "description": "Net Increase in Cash and Cash Equivalents (Indirect Method)"
+        },
+        {
+          "field": "net_dism_capital_add",
+          "description": "Net Increase in Funds Lent"
+        },
+        {
+          "field": "net_cash_rece_sec",
+          "description": "Net Cash Received from Securities Trading Agency Business"
+        },
+        {
+          "field": "credit_impa_loss",
+          "description": "Credit Impairment Loss"
+        },
+        {
+          "field": "use_right_asset_dep",
+          "description": "Depreciation of Right-of-use Assets"
+        },
+        {
+          "field": "oth_loss_asset",
+          "description": "Other Asset Impairment Loss"
+        },
+        {
+          "field": "end_bal_cash",
+          "description": "Closing Balance of Cash"
+        },
+        {
+          "field": "beg_bal_cash",
+          "description": "Less: Opening Balance of Cash"
+        },
+        {
+          "field": "end_bal_cash_equ",
+          "description": "Add: Closing Balance of Cash Equivalents"
+        },
+        {
+          "field": "beg_bal_cash_equ",
+          "description": "Less: Opening Balance of Cash Equivalents"
+        },
+        {
+          "field": "update_flag",
+          "description": "Update Flag (1 for Latest)"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_stock_fin_indicator": {
+      "name": "cd80_stock_fin_indicator",
+      "time_range": "2024.07-2026.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=79",
+      "description": "Financial indicator data of listed companies.",
+      "fields": [
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "ann_date",
+          "description": "Announcement Date"
+        },
+        {
+          "field": "end_date",
+          "description": "Reporting Period"
+        },
+        {
+          "field": "eps",
+          "description": "Basic Earnings Per Share"
+        },
+        {
+          "field": "dt_eps",
+          "description": "Diluted Earnings Per Share"
+        },
+        {
+          "field": "total_revenue_ps",
+          "description": "Total Revenue Per Share"
+        },
+        {
+          "field": "revenue_ps",
+          "description": "Revenue Per Share"
+        },
+        {
+          "field": "capital_rese_ps",
+          "description": "Capital Reserve Per Share"
+        },
+        {
+          "field": "surplus_rese_ps",
+          "description": "Surplus Reserve Per Share"
+        },
+        {
+          "field": "undist_profit_ps",
+          "description": "Undistributed Profit Per Share"
+        },
+        {
+          "field": "extra_item",
+          "description": "Extraordinary Items"
+        },
+        {
+          "field": "profit_dedt",
+          "description": "Net Profit After Deducting Non-recurring Profit and Loss"
+        },
+        {
+          "field": "gross_margin",
+          "description": "Gross Margin"
+        },
+        {
+          "field": "current_ratio",
+          "description": "Current Ratio"
+        },
+        {
+          "field": "quick_ratio",
+          "description": "Quick Ratio"
+        },
+        {
+          "field": "cash_ratio",
+          "description": "Cash Ratio"
+        },
+        {
+          "field": "ar_turn",
+          "description": "Accounts Receivable Turnover Ratio"
+        },
+        {
+          "field": "ca_turn",
+          "description": "Current Assets Turnover Ratio"
+        },
+        {
+          "field": "fa_turn",
+          "description": "Fixed Assets Turnover Ratio"
+        },
+        {
+          "field": "assets_turn",
+          "description": "Total Assets Turnover Ratio"
+        },
+        {
+          "field": "op_income",
+          "description": "Net Operating Income"
+        },
+        {
+          "field": "ebit",
+          "description": "Earnings Before Interest and Taxes"
+        },
+        {
+          "field": "ebitda",
+          "description": "Earnings Before Interest, Taxes, Depreciation and Amortization"
+        },
+        {
+          "field": "fcff",
+          "description": "Free Cash Flow to Firm"
+        },
+        {
+          "field": "fcfe",
+          "description": "Free Cash Flow to Equity"
+        },
+        {
+          "field": "current_exint",
+          "description": "Non-interest-bearing Current Liabilities"
+        },
+        {
+          "field": "noncurrent_exint",
+          "description": "Non-interest-bearing Non-current Liabilities"
+        },
+        {
+          "field": "interestdebt",
+          "description": "Interest-bearing Debt"
+        },
+        {
+          "field": "netdebt",
+          "description": "Net Debt"
+        },
+        {
+          "field": "tangible_asset",
+          "description": "Tangible Assets"
+        },
+        {
+          "field": "working_capital",
+          "description": "Working Capital"
+        },
+        {
+          "field": "networking_capital",
+          "description": "Net Working Capital"
+        },
+        {
+          "field": "invest_capital",
+          "description": "Total Invested Capital"
+        },
+        {
+          "field": "retained_earnings",
+          "description": "Retained Earnings"
+        },
+        {
+          "field": "diluted2_eps",
+          "description": "Diluted Earnings Per Share at Period End"
+        },
+        {
+          "field": "bps",
+          "description": "Net Assets Per Share"
+        },
+        {
+          "field": "ocfps",
+          "description": "Operating Cash Flow Per Share"
+        },
+        {
+          "field": "retainedps",
+          "description": "Retained Earnings Per Share"
+        },
+        {
+          "field": "cfps",
+          "description": "Net Cash Flow Per Share"
+        },
+        {
+          "field": "ebit_ps",
+          "description": "Earnings Before Interest and Taxes Per Share"
+        },
+        {
+          "field": "fcff_ps",
+          "description": "Free Cash Flow to Firm Per Share"
+        },
+        {
+          "field": "fcfe_ps",
+          "description": "Free Cash Flow to Equity Per Share"
+        },
+        {
+          "field": "netprofit_margin",
+          "description": "Net Profit Margin"
+        },
+        {
+          "field": "grossprofit_margin",
+          "description": "Gross Profit Margin"
+        },
+        {
+          "field": "cogs_of_sales",
+          "description": "Cost of Goods Sold Ratio"
+        },
+        {
+          "field": "expense_of_sales",
+          "description": "Period Expense Ratio"
+        },
+        {
+          "field": "profit_to_gr",
+          "description": "Net Profit to Total Revenue"
+        },
+        {
+          "field": "saleexp_to_gr",
+          "description": "Selling Expenses to Total Revenue"
+        },
+        {
+          "field": "adminexp_of_gr",
+          "description": "Administrative Expenses to Total Revenue"
+        },
+        {
+          "field": "finaexp_of_gr",
+          "description": "Financial Expenses to Total Revenue"
+        },
+        {
+          "field": "impai_ttm",
+          "description": "Asset Impairment Loss to Total Revenue"
+        },
+        {
+          "field": "gc_of_gr",
+          "description": "Total Operating Cost to Total Revenue"
+        },
+        {
+          "field": "op_of_gr",
+          "description": "Operating Profit to Total Revenue"
+        },
+        {
+          "field": "ebit_of_gr",
+          "description": "EBIT to Total Revenue"
+        },
+        {
+          "field": "roe",
+          "description": "Return on Equity"
+        },
+        {
+          "field": "roe_waa",
+          "description": "Weighted Average Return on Equity"
+        },
+        {
+          "field": "roe_dt",
+          "description": "Return on Equity After Deducting Non-recurring Profit and Loss"
+        },
+        {
+          "field": "roa",
+          "description": "Return on Assets"
+        },
+        {
+          "field": "npta",
+          "description": "Net Profit to Total Assets"
+        },
+        {
+          "field": "roic",
+          "description": "Return on Invested Capital"
+        },
+        {
+          "field": "roe_yearly",
+          "description": "Annualized Return on Equity"
+        },
+        {
+          "field": "roa2_yearly",
+          "description": "Annualized Return on Assets"
+        },
+        {
+          "field": "debt_to_assets",
+          "description": "Debt to Assets Ratio"
+        },
+        {
+          "field": "assets_to_eqt",
+          "description": "Equity Multiplier"
+        },
+        {
+          "field": "dp_assets_to_eqt",
+          "description": "Equity Multiplier (DuPont Analysis)"
+        },
+        {
+          "field": "ca_to_assets",
+          "description": "Current Assets to Total Assets"
+        },
+        {
+          "field": "nca_to_assets",
+          "description": "Non-current Assets to Total Assets"
+        },
+        {
+          "field": "tbassets_to_totalassets",
+          "description": "Tangible Assets to Total Assets"
+        },
+        {
+          "field": "int_to_talcap",
+          "description": "Interest-bearing Debt to Total Invested Capital"
+        },
+        {
+          "field": "eqt_to_talcapital",
+          "description": "Equity Attributable to Parent Company to Total Invested Capital"
+        },
+        {
+          "field": "currentdebt_to_debt",
+          "description": "Current Debt to Total Debt"
+        },
+        {
+          "field": "longdeb_to_debt",
+          "description": "Long-term Debt to Total Debt"
+        },
+        {
+          "field": "ocf_to_shortdebt",
+          "description": "Net Cash Flow from Operating Activities to Current Liabilities"
+        },
+        {
+          "field": "debt_to_eqt",
+          "description": "Debt to Equity Ratio"
+        },
+        {
+          "field": "eqt_to_debt",
+          "description": "Equity Attributable to Parent Company to Total Liabilities"
+        },
+        {
+          "field": "eqt_to_interestdebt",
+          "description": "Equity Attributable to Parent Company to Interest-bearing Debt"
+        },
+        {
+          "field": "tangibleasset_to_debt",
+          "description": "Tangible Assets to Total Liabilities"
+        },
+        {
+          "field": "tangasset_to_intdebt",
+          "description": "Tangible Assets to Interest-bearing Debt"
+        },
+        {
+          "field": "tangibleasset_to_netdebt",
+          "description": "Tangible Assets to Net Debt"
+        },
+        {
+          "field": "ocf_to_debt",
+          "description": "Net Cash Flow from Operating Activities to Total Liabilities"
+        },
+        {
+          "field": "turn_days",
+          "description": "Operating Cycle"
+        },
+        {
+          "field": "roa_yearly",
+          "description": "Annualized Return on Total Assets"
+        },
+        {
+          "field": "roa_dp",
+          "description": "Return on Total Assets (DuPont Analysis)"
+        },
+        {
+          "field": "fixed_assets",
+          "description": "Total Fixed Assets"
+        },
+        {
+          "field": "profit_to_op",
+          "description": "Total Profit to Revenue"
+        },
+        {
+          "field": "q_saleexp_to_gr",
+          "description": "Selling Expenses to Total Revenue (Single Quarter)"
+        },
+        {
+          "field": "q_gc_to_gr",
+          "description": "Total Operating Cost to Total Revenue (Single Quarter)"
+        },
+        {
+          "field": "q_roe",
+          "description": "Return on Equity (Single Quarter)"
+        },
+        {
+          "field": "q_dt_roe",
+          "description": "Return on Equity After Deducting Non-recurring Profit and Loss (Single Quarter)"
+        },
+        {
+          "field": "q_npta",
+          "description": "Net Profit to Total Assets (Single Quarter)"
+        },
+        {
+          "field": "q_ocf_to_sales",
+          "description": "Net Cash Flow from Operating Activities to Revenue (Single Quarter)"
+        },
+        {
+          "field": "basic_eps_yoy",
+          "description": "Basic Earnings Per Share Year-over-Year Growth Rate(%)"
+        },
+        {
+          "field": "dt_eps_yoy",
+          "description": "Diluted Earnings Per Share Year-over-Year Growth Rate(%)"
+        },
+        {
+          "field": "cfps_yoy",
+          "description": "Operating Cash Flow Per Share Year-over-Year Growth Rate(%)"
+        },
+        {
+          "field": "op_yoy",
+          "description": "Operating Profit Year-over-Year Growth Rate(%)"
+        },
+        {
+          "field": "ebt_yoy",
+          "description": "Total Profit Year-over-Year Growth Rate(%)"
+        },
+        {
+          "field": "netprofit_yoy",
+          "description": "Net Profit Attributable to Parent Company Year-over-Year Growth Rate(%)"
+        },
+        {
+          "field": "dt_netprofit_yoy",
+          "description": "Net Profit Attributable to Parent Company After Deducting Non-recurring Profit and Loss Year-over-Year Growth Rate(%)"
+        },
+        {
+          "field": "ocf_yoy",
+          "description": "Net Cash Flow from Operating Activities Year-over-Year Growth Rate(%)"
+        },
+        {
+          "field": "roe_yoy",
+          "description": "Return on Equity (Diluted) Year-over-Year Growth Rate(%)"
+        },
+        {
+          "field": "bps_yoy",
+          "description": "Net Assets Per Share Growth Rate Relative to Beginning of Year(%)"
+        },
+        {
+          "field": "assets_yoy",
+          "description": "Total Assets Growth Rate Relative to Beginning of Year(%)"
+        },
+        {
+          "field": "eqt_yoy",
+          "description": "Equity Attributable to Parent Company Growth Rate Relative to Beginning of Year(%)"
+        },
+        {
+          "field": "tr_yoy",
+          "description": "Total Revenue Year-over-Year Growth Rate(%)"
+        },
+        {
+          "field": "or_yoy",
+          "description": "Revenue Year-over-Year Growth Rate(%)"
+        },
+        {
+          "field": "q_sales_yoy",
+          "description": "Revenue Year-over-Year Growth Rate(%)(Single Quarter)"
+        },
+        {
+          "field": "q_op_qoq",
+          "description": "Operating Profit Quarter-over-Quarter Growth Rate(%)(Single Quarter)"
+        },
+        {
+          "field": "equity_yoy",
+          "description": "Net Assets Year-over-Year Growth Rate"
+        },
+        {
+          "field": "net_profit_ratio",
+          "description": "Net Profit Ratio"
+        },
+        {
+          "field": "netprofit_ratio",
+          "description": "Net Profit Ratio"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_stock_fin_dividend": {
+      "name": "cd80_stock_fin_dividend",
+      "time_range": "2024.07-2026.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=103",
+      "description": "Dividend and bonus share data.",
+      "fields": [
+        {
+          "field": "id",
+          "description": "Record ID"
+        },
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "end_date",
+          "description": "Dividend Year"
+        },
+        {
+          "field": "ann_date",
+          "description": "Announcement Date"
+        },
+        {
+          "field": "div_proc",
+          "description": "Implementation Progress"
+        },
+        {
+          "field": "stk_div",
+          "description": "Stock Dividend per Share"
+        },
+        {
+          "field": "stk_bo_rate",
+          "description": "Stock Bonus Ratio per Share"
+        },
+        {
+          "field": "stk_co_rate",
+          "description": "Capitalization Ratio per Share"
+        },
+        {
+          "field": "cash_div",
+          "description": "Cash Dividend per Share (After Tax)"
+        },
+        {
+          "field": "cash_div_tax",
+          "description": "Cash Dividend per Share (Before Tax)"
+        },
+        {
+          "field": "record_date",
+          "description": "Record Date"
+        },
+        {
+          "field": "ex_date",
+          "description": "Ex-Dividend Date"
+        },
+        {
+          "field": "pay_date",
+          "description": "Payment Date"
+        },
+        {
+          "field": "div_listdate",
+          "description": "Bonus Share Listing Date"
+        },
+        {
+          "field": "imp_ann_date",
+          "description": "Implementation Announcement Date"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_etf_basic": {
+      "name": "cd80_etf_basic",
+      "time_range": "2024.07-2026.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=385",
+      "description": "ETF basic information",
+      "fields": [
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "csname",
+          "description": "ETF Chinese Short Name"
+        },
+        {
+          "field": "extname",
+          "description": "ETF Extended Short Name"
+        },
+        {
+          "field": "cname",
+          "description": "Fund Chinese Full Name"
+        },
+        {
+          "field": "index_code",
+          "description": "ETF Benchmark Index Code"
+        },
+        {
+          "field": "index_name",
+          "description": "ETF Benchmark Index Chinese Full Name"
+        },
+        {
+          "field": "setup_date",
+          "description": "Setup Date"
+        },
+        {
+          "field": "list_date",
+          "description": "Listing Date"
+        },
+        {
+          "field": "list_status",
+          "description": "Listing Status"
+        },
+        {
+          "field": "exchange",
+          "description": "Exchange"
+        },
+        {
+          "field": "mgr_name",
+          "description": "Fund Manager Short Name"
+        },
+        {
+          "field": "custod_name",
+          "description": "Fund Custodian Name"
+        },
+        {
+          "field": "mgt_fee",
+          "description": "Management Fee"
+        },
+        {
+          "field": "etf_type",
+          "description": "Fund Investment Channel Type"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_etf_index": {
+      "name": "cd80_etf_index",
+      "time_range": "2024.07-2025.12",
+      "source_url": "https://tushare.pro/document/2?doc_id=386",
+      "description": "ETF benchmark index list information.",
+      "fields": [
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "indx_name",
+          "description": "Index Full Name"
+        },
+        {
+          "field": "indx_csname",
+          "description": "Index Short Name"
+        },
+        {
+          "field": "pub_party_name",
+          "description": "Index Publisher"
+        },
+        {
+          "field": "pub_date",
+          "description": "Index Publication Date"
+        },
+        {
+          "field": "base_date",
+          "description": "Index Base Date"
+        },
+        {
+          "field": "bp",
+          "description": "Index Base Point"
+        },
+        {
+          "field": "adj_circle",
+          "description": "Index Constituent Adjustment Cycle"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_etf_fund_daily": {
+      "name": "cd80_etf_fund_daily",
+      "time_range": "2024.07-2026.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=127",
+      "description": "Daily trading data of ETFs after market close.",
+      "fields": [
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "trade_date",
+          "description": "Trade Date"
+        },
+        {
+          "field": "pre_close",
+          "description": "Previous Close Price"
+        },
+        {
+          "field": "open",
+          "description": "Open Price"
+        },
+        {
+          "field": "high",
+          "description": "High Price"
+        },
+        {
+          "field": "low",
+          "description": "Low Price"
+        },
+        {
+          "field": "close",
+          "description": "Close Price"
+        },
+        {
+          "field": "change",
+          "description": "Change"
+        },
+        {
+          "field": "pct_chg",
+          "description": "Percentage Change"
+        },
+        {
+          "field": "vol",
+          "description": "Volume"
+        },
+        {
+          "field": "amount",
+          "description": "Amount"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_etf_share_size": {
+      "name": "cd80_etf_share_size",
+      "time_range": "2024.07-2026.10",
+      "source_url": "https://tushare.pro/document/2?doc_id=408",
+      "description": "Daily share and scale data of Shanghai and Shenzhen ETFs, which can reflect changes in scale and shares, help track ETF fund flows, and provide daily net asset value and closing price.",
+      "fields": [
+        {
+          "field": "trade_date",
+          "description": "Trade Date"
+        },
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "etf_name",
+          "description": "ETF Name"
+        },
+        {
+          "field": "total_share",
+          "description": "Total Shares"
+        },
+        {
+          "field": "total_size",
+          "description": "Total Size"
+        },
+        {
+          "field": "exchange",
+          "description": "Exchange"
+        },
+        {
+          "field": "nav",
+          "description": "Net Asset Value"
+        },
+        {
+          "field": "close",
+          "description": "Close Price"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_fund_basic": {
+      "name": "cd80_fund_basic",
+      "time_range": "1998.03-2026.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=19",
+      "description": "Public fund data list.",
+      "fields": [
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "name",
+          "description": "Name"
+        },
+        {
+          "field": "management",
+          "description": "Management"
+        },
+        {
+          "field": "custodian",
+          "description": "Custodian"
+        },
+        {
+          "field": "fund_type",
+          "description": "Fund Type"
+        },
+        {
+          "field": "found_date",
+          "description": "Found Date"
+        },
+        {
+          "field": "due_date",
+          "description": "Due Date"
+        },
+        {
+          "field": "list_date",
+          "description": "Listing Date"
+        },
+        {
+          "field": "issue_date",
+          "description": "Issue Date"
+        },
+        {
+          "field": "delist_date",
+          "description": "Delisting Date"
+        },
+        {
+          "field": "issue_amount",
+          "description": "Issue Amount"
+        },
+        {
+          "field": "m_fee",
+          "description": "Management Fee"
+        },
+        {
+          "field": "c_fee",
+          "description": "Custodian Fee"
+        },
+        {
+          "field": "duration_year",
+          "description": "Duration Year"
+        },
+        {
+          "field": "p_value",
+          "description": "Par Value"
+        },
+        {
+          "field": "min_amount",
+          "description": "Minimum Amount"
+        },
+        {
+          "field": "exp_return",
+          "description": "Expected Return"
+        },
+        {
+          "field": "benchmark",
+          "description": "Benchmark"
+        },
+        {
+          "field": "status",
+          "description": "Status"
+        },
+        {
+          "field": "invest_type",
+          "description": "Investment Type"
+        },
+        {
+          "field": "type",
+          "description": "Type"
+        },
+        {
+          "field": "trustee",
+          "description": "Trustee"
+        },
+        {
+          "field": "purc_startdate",
+          "description": "Purchase Start Date"
+        },
+        {
+          "field": "redm_startdate",
+          "description": "Redemption Start Date"
+        },
+        {
+          "field": "market",
+          "description": "Market"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_fund_nav": {
+      "name": "cd80_fund_nav",
+      "time_range": "2024.07-2026.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=119",
+      "description": "Public fund net asset value (NAV) data.",
+      "fields": [
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "ann_date",
+          "description": "Announcement Date"
+        },
+        {
+          "field": "nav_date",
+          "description": "Net Asset Value Date"
+        },
+        {
+          "field": "unit_nav",
+          "description": "Unit Net Asset Value"
+        },
+        {
+          "field": "accum_nav",
+          "description": "Accumulated Net Asset Value"
+        },
+        {
+          "field": "accum_div",
+          "description": "Accumulated Dividend"
+        },
+        {
+          "field": "net_asset",
+          "description": "Net Asset"
+        },
+        {
+          "field": "adj_nav",
+          "description": "Adjusted Net Asset Value"
+        },
+        {
+          "field": "update_flag",
+          "description": "Indicates whether the record is an original entry or an updated version.0: Original record;1: Updated record"
+        },
+        {
+          "field": "total_netasset",
+          "description": "Total Net Asset"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_cn_cpi": {
+      "name": "cd80_cn_cpi",
+      "time_range": "1951.12-2026.08",
+      "source_url": "https://tushare.pro/document/2?doc_id=228",
+      "description": "CPI Consumer Price Index data.",
+      "fields": [
+        {
+          "field": "id",
+          "description": "Record ID"
+        },
+        {
+          "field": "month",
+          "description": "Month"
+        },
+        {
+          "field": "nt_val",
+          "description": "National Current Value"
+        },
+        {
+          "field": "nt_yoy",
+          "description": "National Year-over-Year(%)"
+        },
+        {
+          "field": "nt_mom",
+          "description": "National Month-over-Month(%)"
+        },
+        {
+          "field": "nt_accu",
+          "description": "National Cumulative Value"
+        },
+        {
+          "field": "town_val",
+          "description": "Urban Current Value"
+        },
+        {
+          "field": "town_yoy",
+          "description": "Urban Year-over-Year(%)"
+        },
+        {
+          "field": "town_mom",
+          "description": "Urban Month-over-Month(%)"
+        },
+        {
+          "field": "town_accu",
+          "description": "Urban Cumulative Value"
+        },
+        {
+          "field": "cnt_val",
+          "description": "Rural Current Value"
+        },
+        {
+          "field": "cnt_yoy",
+          "description": "Rural Year-over-Year(%)"
+        },
+        {
+          "field": "cnt_mom",
+          "description": "Rural Month-over-Month(%)"
+        },
+        {
+          "field": "cnt_accu",
+          "description": "Rural Cumulative Value"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_ci_index_member": {
+      "name": "cd80_ci_index_member",
+      "time_range": "2000.05-2026.06",
+      "source_url": "https://tushare.pro/document/2?doc_id=373",
+      "description": "Extract Shenwan industry constituents by three-level classification. It can provide all constituents of a certain classification, or retrieve the classification a stock belongs to by stock code, with flexible parameters.",
+      "fields": [
+        {
+          "field": "l1_code",
+          "description": "L1 Code"
+        },
+        {
+          "field": "l1_name",
+          "description": "L1 Name"
+        },
+        {
+          "field": "l2_code",
+          "description": "L2 Code"
+        },
+        {
+          "field": "l2_name",
+          "description": "L2 Name"
+        },
+        {
+          "field": "l3_code",
+          "description": "L3 Code"
+        },
+        {
+          "field": "l3_name",
+          "description": "L3 Name"
+        },
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "name",
+          "description": "Name"
+        },
+        {
+          "field": "in_date",
+          "description": "Inclusion Date"
+        },
+        {
+          "field": "out_date",
+          "description": "Exclusion Date"
+        },
+        {
+          "field": "is_new",
+          "description": "Is Latest"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_cn_lpr": {
+      "name": "cd80_cn_lpr",
+      "time_range": "2013.10-2026.08",
+      "source_url": "https://tushare.pro/document/2?doc_id=151",
+      "description": "LPR (Loan Prime Rate).",
+      "fields": [
+        {
+          "field": "id",
+          "description": "Record ID"
+        },
+        {
+          "field": "date",
+          "description": "Date"
+        },
+        {
+          "field": "1y",
+          "description": "1-Year Loan Rate"
+        },
+        {
+          "field": "5y",
+          "description": "5-Year Loan Rate"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_stock_basic_managers": {
+      "name": "cd80_stock_basic_managers",
+      "time_range": "2024.08",
+      "source_url": "https://tushare.pro/document/2?doc_id=193",
+      "description": "Management of listed companies.",
+      "fields": [
+        {
+          "field": "id",
+          "description": "Record ID"
+        },
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "ann_date",
+          "description": "Announcement Date"
+        },
+        {
+          "field": "name",
+          "description": "Name"
+        },
+        {
+          "field": "gender",
+          "description": "Gender"
+        },
+        {
+          "field": "lev",
+          "description": "Position Category"
+        },
+        {
+          "field": "title",
+          "description": "Position"
+        },
+        {
+          "field": "edu",
+          "description": "Education"
+        },
+        {
+          "field": "national",
+          "description": "Nationality"
+        },
+        {
+          "field": "birthday",
+          "description": "Birthday"
+        },
+        {
+          "field": "begin_date",
+          "description": "Appointment Date"
+        },
+        {
+          "field": "end_date",
+          "description": "Departure Date"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_stock_refer_holders_top10": {
+      "name": "cd80_stock_refer_holders_top10",
+      "time_range": "2024.07-2026.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=61",
+      "description": "Top ten shareholders data of listed companies.",
+      "fields": [
+        {
+          "field": "id",
+          "description": "Record ID"
+        },
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "ann_date",
+          "description": "Announcement Date"
+        },
+        {
+          "field": "end_date",
+          "description": "Reporting Period"
+        },
+        {
+          "field": "holder_name",
+          "description": "Holder Name"
+        },
+        {
+          "field": "hold_amount",
+          "description": "Holding Amount"
+        },
+        {
+          "field": "hold_ratio",
+          "description": "Holding Ratio(%)"
+        },
+        {
+          "field": "hold_float_ratio",
+          "description": "Holding Ratio of Circulating Shares(%)"
+        },
+        {
+          "field": "hold_change",
+          "description": "Holding Change"
+        },
+        {
+          "field": "holder_type",
+          "description": "Holder Type"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_stock_refer_pledge_stat": {
+      "name": "cd80_stock_refer_pledge_stat",
+      "time_range": "2015.01-2017.08",
+      "source_url": "https://tushare.pro/document/2?doc_id=110",
+      "description": "Stock pledge statistical data.",
+      "fields": [
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "end_date",
+          "description": "End Date"
+        },
+        {
+          "field": "pledge_count",
+          "description": "Pledge Count"
+        },
+        {
+          "field": "unrest_pledge",
+          "description": "Unrestricted Shares Pledged"
+        },
+        {
+          "field": "rest_pledge",
+          "description": "Restricted Shares Pledged"
+        },
+        {
+          "field": "total_share",
+          "description": "Total Shares"
+        },
+        {
+          "field": "pledge_ratio",
+          "description": "Pledge Ratio(%)"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_bond_cb_basic": {
+      "name": "cd80_bond_cb_basic",
+      "time_range": "1993.02-2026.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=185",
+      "description": "Convertible bond basic information.",
+      "fields": [
+        {
+          "field": "id",
+          "description": "Record ID"
+        },
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "bond_full_name",
+          "description": "Bond Full Name"
+        },
+        {
+          "field": "bond_short_name",
+          "description": "Bond Short Name"
+        },
+        {
+          "field": "cb_code",
+          "description": "Conversion Application Code"
+        },
+        {
+          "field": "stk_code",
+          "description": "Underlying Stock Code"
+        },
+        {
+          "field": "stk_short_name",
+          "description": "Underlying Stock Short Name"
+        },
+        {
+          "field": "maturity",
+          "description": "Maturity"
+        },
+        {
+          "field": "par",
+          "description": "Par Value"
+        },
+        {
+          "field": "issue_price",
+          "description": "Issue Price"
+        },
+        {
+          "field": "issue_size",
+          "description": "Issue Size"
+        },
+        {
+          "field": "remain_size",
+          "description": "Remaining Size"
+        },
+        {
+          "field": "value_date",
+          "description": "Value Date"
+        },
+        {
+          "field": "maturity_date",
+          "description": "Maturity Date"
+        },
+        {
+          "field": "rate_type",
+          "description": "Rate Type"
+        },
+        {
+          "field": "coupon_rate",
+          "description": "Coupon Rate"
+        },
+        {
+          "field": "add_rate",
+          "description": "Additional Rate"
+        },
+        {
+          "field": "pay_per_year",
+          "description": "Payment Frequency Per Year"
+        },
+        {
+          "field": "list_date",
+          "description": "Listing Date"
+        },
+        {
+          "field": "delist_date",
+          "description": "Delisting Date"
+        },
+        {
+          "field": "exchange",
+          "description": "Exchange"
+        },
+        {
+          "field": "conv_start_date",
+          "description": "Conversion Start Date"
+        },
+        {
+          "field": "conv_end_date",
+          "description": "Conversion End Date"
+        },
+        {
+          "field": "conv_stop_date",
+          "description": "Conversion Stop Date"
+        },
+        {
+          "field": "first_conv_price",
+          "description": "Initial Conversion Price"
+        },
+        {
+          "field": "conv_price",
+          "description": "Latest Conversion Price"
+        },
+        {
+          "field": "rate_clause",
+          "description": "Rate Clause"
+        },
+        {
+          "field": "issue_rating",
+          "description": "Issue Rating"
+        },
+        {
+          "field": "newest_rating",
+          "description": "Newest Rating"
+        },
+        {
+          "field": "rating_comp",
+          "description": "Rating Company"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_bond_cb_dd": {
+      "name": "cd80_bond_cb_dd",
+      "time_range": "2024.07-2026.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=187",
+      "description": "Convertible bond market quotes.",
+      "fields": [
+        {
+          "field": "id",
+          "description": "Record ID"
+        },
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "trade_date",
+          "description": "Trade Date"
+        },
+        {
+          "field": "pre_close",
+          "description": "Previous Close Price"
+        },
+        {
+          "field": "open",
+          "description": "Open Price"
+        },
+        {
+          "field": "high",
+          "description": "High Price"
+        },
+        {
+          "field": "low",
+          "description": "Low Price"
+        },
+        {
+          "field": "close",
+          "description": "Close Price"
+        },
+        {
+          "field": "change",
+          "description": "Change"
+        },
+        {
+          "field": "pct_chg",
+          "description": "Percentage Change"
+        },
+        {
+          "field": "vol",
+          "description": "Volume"
+        },
+        {
+          "field": "amount",
+          "description": "Amount"
+        },
+        {
+          "field": "bond_value",
+          "description": "Bond Value"
+        },
+        {
+          "field": "bond_over_rate",
+          "description": "Bond Over Rate(%)"
+        },
+        {
+          "field": "cb_value",
+          "description": "Conversion Value"
+        },
+        {
+          "field": "cb_over_rate",
+          "description": "Conversion Over Rate(%)"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_bond_cb_redeem": {
+      "name": "cd80_bond_cb_redeem",
+      "time_range": "2015.01-2026.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=269",
+      "description": "Information such as maturity redemption and mandatory redemption of convertible bonds.",
+      "fields": [
+        {
+          "field": "id",
+          "description": "Record ID"
+        },
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "call_type",
+          "description": "Call Type"
+        },
+        {
+          "field": "is_call",
+          "description": "Is Call"
+        },
+        {
+          "field": "ann_date",
+          "description": "Announcement Date"
+        },
+        {
+          "field": "call_date",
+          "description": "Call Date"
+        },
+        {
+          "field": "call_price",
+          "description": "Call Price (Tax Included)"
+        },
+        {
+          "field": "call_price_tax",
+          "description": "Call Price (Tax Deducted)"
+        },
+        {
+          "field": "call_vol",
+          "description": "Call Volume"
+        },
+        {
+          "field": "call_amount",
+          "description": "Call Amount"
+        },
+        {
+          "field": "payment_date",
+          "description": "Payment Date"
+        },
+        {
+          "field": "call_reg_date",
+          "description": "Call Registration Date"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_index_dd": {
+      "name": "cd80_index_dd",
+      "time_range": "2024.07-2026.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=95",
+      "description": "Daily market data for various indices.",
+      "fields": [
+        {
+          "field": "id",
+          "description": "Record ID"
+        },
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "trade_date",
+          "description": "Trade Date"
+        },
+        {
+          "field": "close",
+          "description": "Close"
+        },
+        {
+          "field": "open",
+          "description": "Open"
+        },
+        {
+          "field": "high",
+          "description": "High"
+        },
+        {
+          "field": "low",
+          "description": "Low"
+        },
+        {
+          "field": "pre_close",
+          "description": "Previous Close"
+        },
+        {
+          "field": "change",
+          "description": "Change"
+        },
+        {
+          "field": "pct_chg",
+          "description": "Percentage Change"
+        },
+        {
+          "field": "vol",
+          "description": "Volume"
+        },
+        {
+          "field": "amount",
+          "description": "Amount"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_daily": {
+      "name": "cd80_daily",
+      "time_range": "2024.07–2026.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=27",
+      "description": "Daily stock market data, including security codes, trading dates, open, high, low and close prices, price changes, trading volumes, and trading amounts.",
+      "fields": [
+        {
+          "field": "ts_code",
+          "description": "Security Code"
+        },
+        {
+          "field": "trade_date",
+          "description": "Trade Date"
+        },
+        {
+          "field": "open",
+          "description": "Open Price"
+        },
+        {
+          "field": "high",
+          "description": "High Price"
+        },
+        {
+          "field": "low",
+          "description": "Low Price"
+        },
+        {
+          "field": "close",
+          "description": "Close Price"
+        },
+        {
+          "field": "pre_close",
+          "description": "Previous Close Price"
+        },
+        {
+          "field": "change",
+          "description": "Price Change"
+        },
+        {
+          "field": "pct_chg",
+          "description": "Percentage Change (%)"
+        },
+        {
+          "field": "vol",
+          "description": "Trading Volume in Lots"
+        },
+        {
+          "field": "amount",
+          "description": "Trading Amount in CNY Thousands"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_daily_basic": {
+      "name": "cd80_daily_basic",
+      "time_range": "2024.07-2026.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=32",
+      "description": "Daily fundamental and market indicators for all stocks, including valuation ratios, turnover rates, dividend yields, share capital, and market capitalization.",
+      "fields": [
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "trade_date",
+          "description": "Trade Date"
+        },
+        {
+          "field": "close",
+          "description": "Close Price"
+        },
+        {
+          "field": "turnover_rate",
+          "description": "Turnover Rate"
+        },
+        {
+          "field": "turnover_rate_f",
+          "description": "Free-float Turnover Rate"
+        },
+        {
+          "field": "volume_ratio",
+          "description": "Volume Ratio"
+        },
+        {
+          "field": "pe",
+          "description": "Price-Earnings Ratio"
+        },
+        {
+          "field": "pe_ttm",
+          "description": "TTM Price-Earnings Ratio"
+        },
+        {
+          "field": "pb",
+          "description": "Price-to-Book Ratio"
+        },
+        {
+          "field": "ps",
+          "description": "Price-to-Sales Ratio"
+        },
+        {
+          "field": "ps_ttm",
+          "description": "TTM Price-to-Sales Ratio"
+        },
+        {
+          "field": "dv_ratio",
+          "description": "Dividend Yield"
+        },
+        {
+          "field": "dv_ttm",
+          "description": "TTM Dividend Yield"
+        },
+        {
+          "field": "total_share",
+          "description": "Total Shares"
+        },
+        {
+          "field": "float_share",
+          "description": "Float Shares"
+        },
+        {
+          "field": "free_share",
+          "description": "Free Float Shares"
+        },
+        {
+          "field": "total_mv",
+          "description": "Total Market Value"
+        },
+        {
+          "field": "circ_mv",
+          "description": "Circulating Market Value"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_factor_list": {
+      "name": "cd80_factor_list",
+      "time_range": "——",
+      "source_url": "https://tushare.pro/document/2?doc_id=486",
+      "description": "Quantitative investment factor catalog data, including factor names, applicable asset classes, factor categories, factor definitions, and mathematical calculation logic.",
+      "fields": [
+        {
+          "field": "factor_name",
+          "description": "Factor Name"
+        },
+        {
+          "field": "asset_class",
+          "description": "Asset Class"
+        },
+        {
+          "field": "factor_category",
+          "description": "Factor Category"
+        },
+        {
+          "field": "factor_description",
+          "description": "Factor Description and Calculation Logic"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_fund_portfolio": {
+      "name": "cd80_fund_portfolio",
+      "time_range": "2024.07–2026.08",
+      "source_url": "https://tushare.pro/document/2?doc_id=121",
+      "description": "Public fund equity portfolio holdings data, including fund codes, announcement dates, reporting-period end dates, held securities, holding market values and quantities, and relevant holding ratios.",
+      "fields": [
+        {
+          "field": "fund_code",
+          "description": "Fund Code"
+        },
+        {
+          "field": "announcement_date",
+          "description": "Announcement Date"
+        },
+        {
+          "field": "report_end_date",
+          "description": "Reporting Period End Date"
+        },
+        {
+          "field": "security_code",
+          "description": "Security Code"
+        },
+        {
+          "field": "holding_market_value_cny",
+          "description": "Holding Market Value in CNY"
+        },
+        {
+          "field": "holding_quantity_shares",
+          "description": "Holding Quantity in Shares"
+        },
+        {
+          "field": "share_of_fund_equity_market_value_percent",
+          "description": "Share of Fund Equity Market Value (%)"
+        },
+        {
+          "field": "share_of_security_float_percent",
+          "description": "Share of Security Float (%)"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_anns_d": {
+      "name": "cd80_anns_d",
+      "time_range": "2024.07-2026.10",
+      "source_url": "https://tushare.pro/document/2?doc_id=176",
+      "description": "Listed-company announcement metadata, including announcement date, security ticker, security name, announcement title, and source document URL.",
+      "fields": [
+        {
+          "field": "announcement_date",
+          "description": "Announcement Date"
+        },
+        {
+          "field": "ticker",
+          "description": "Ticker"
+        },
+        {
+          "field": "security_name",
+          "description": "Security Name"
+        },
+        {
+          "field": "announcement_title",
+          "description": "Announcement Title"
+        },
+        {
+          "field": "url",
+          "description": "Source Document URL"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_cb_price_chg": {
+      "name": "cd80_cb_price_chg",
+      "time_range": "1992.11-2014.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=246",
+      "description": "Convertible bond conversion price change data, including bond ticker, bond name, publication date, effective change date, and conversion prices before and after each adjustment.",
+      "fields": [
+        {
+          "field": "ticker",
+          "description": "Ticker"
+        },
+        {
+          "field": "bond_short_name",
+          "description": "Convertible Bond Short Name"
+        },
+        {
+          "field": "publication_date",
+          "description": "Publication Date"
+        },
+        {
+          "field": "change_date",
+          "description": "Conversion Price Change Date"
+        },
+        {
+          "field": "initial_conversion_price",
+          "description": "Initial Conversion Price"
+        },
+        {
+          "field": "conversion_price_before",
+          "description": "Conversion Price Before Change"
+        },
+        {
+          "field": "conversion_price_after",
+          "description": "Conversion Price After Change"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_yc_cb": {
+      "name": "cd80_yc_cb",
+      "time_range": "2024.07-2026.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=201",
+      "description": "ChinaBond government bond yield curve data, including the observation date, curve identifier, curve type, maturity, and corresponding yield.",
+      "fields": [
+        {
+          "field": "trade_date",
+          "description": "Trade Date"
+        },
+        {
+          "field": "curve_code",
+          "description": "Curve Code"
+        },
+        {
+          "field": "curve_name",
+          "description": "Curve Name"
+        },
+        {
+          "field": "curve_type",
+          "description": "Curve Type: 0 = Yield to Maturity, 1 = Spot Rate"
+        },
+        {
+          "field": "maturity_years",
+          "description": "Maturity in Years"
+        },
+        {
+          "field": "yield_percent",
+          "description": "Yield in Percent"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_spots_sh_gold_dd": {
+      "name": "cd80_spots_sh_gold_dd",
+      "time_range": "2015.01-2026.09",
+      "source_url": "https://tushare.pro/document/2?doc_id=285",
+      "description": "Shanghai Gold Exchange spot contract daily candlestick market data.",
+      "fields": [
+        {
+          "field": "ID",
+          "description": "Record ID"
+        },
+        {
+          "field": "ts_code",
+          "description": "TS Code"
+        },
+        {
+          "field": "trade_date",
+          "description": "Trade Date"
+        },
+        {
+          "field": "close",
+          "description": "Close Price"
+        },
+        {
+          "field": "open",
+          "description": "Open Price"
+        },
+        {
+          "field": "high",
+          "description": "High Price"
+        },
+        {
+          "field": "low",
+          "description": "Low Price"
+        },
+        {
+          "field": "price_avg",
+          "description": "Weighted Average Price"
+        },
+        {
+          "field": "change",
+          "description": "Change"
+        },
+        {
+          "field": "pct_change",
+          "description": "Percentage Change"
+        },
+        {
+          "field": "vol",
+          "description": "Volume"
+        },
+        {
+          "field": "amount",
+          "description": "Amount"
+        },
+        {
+          "field": "oi",
+          "description": "Open Interest"
+        },
+        {
+          "field": "settle_vol",
+          "description": "Settlement Volume"
+        },
+        {
+          "field": "settle_dire",
+          "description": "Settlement Direction"
+        }
+      ],
+      "provider": "Tushare"
+    },
+    "cd80_margin_data": {
+      "name": "cd80_margin_data",
+      "time_range": "2025.07–2026.07",
+      "source_url": "Data Source: Southern Finance",
+      "description": "Margin trading and securities lending details, including daily financing balances, financing purchases and repayments, securities lending balances and quantities for each security.",
+      "fields": [
+        {
+          "field": "ID",
+          "description": "Record ID"
+        },
+        {
+          "field": "TRADEDATE",
+          "description": "Trade Date"
+        },
+        {
+          "field": "SECODE",
+          "description": "Security Internal Code"
+        },
+        {
+          "field": "SYMBOL",
+          "description": "Security Code"
+        },
+        {
+          "field": "EXCHANGE",
+          "description": "Exchange Code"
+        },
+        {
+          "field": "FINBALANCE",
+          "description": "Margin Financing Balance"
+        },
+        {
+          "field": "FINBUYAMT",
+          "description": "Margin Purchase Amount"
+        },
+        {
+          "field": "FINREPAYAMT",
+          "description": "Financing Repayment Amount"
+        },
+        {
+          "field": "MRGGBAL",
+          "description": "Securities Lending Balance"
+        },
+        {
+          "field": "MRGNRESQTY",
+          "description": "Securities Lending Outstanding Quantity"
+        },
+        {
+          "field": "MRGNSELLAMT",
+          "description": "Securities Lending Sell Quantity"
+        },
+        {
+          "field": "MRGNREPAYAMT",
+          "description": "Securities Lending Repayment Quantity"
+        },
+        {
+          "field": "FINMRGHBAL",
+          "description": "Total Margin Financing and Securities Lending Balance"
+        },
+        {
+          "field": "ISVALID",
+          "description": "Validity Flag"
+        },
+        {
+          "field": "TMSTAMP",
+          "description": "Timestamp"
+        },
+        {
+          "field": "ENTRYDATE",
+          "description": "Entry Date"
+        },
+        {
+          "field": "ENTRYTIME",
+          "description": "Entry Time"
+        },
+        {
+          "field": "DATA_DOWNLOAD_TIME",
+          "description": "Data Download Time"
+        }
+      ],
+      "provider": "Southern Finance Omnimedia Corp."
+    },
+    "cd80_lhb_summary": {
+      "name": "cd80_lhb_summary",
+      "time_range": "2025.07–2026.09",
+      "source_url": "Table Name",
+      "description": "Field Name",
+      "fields": [
+        {
+          "field": "ID",
+          "description": "Record ID"
+        },
+        {
+          "field": "BIZUNITTRDINFOID",
+          "description": "Business Unit Trading Information ID"
+        },
+        {
+          "field": "TRADEDATE",
+          "description": "Trade Date"
+        },
+        {
+          "field": "SYMBOL",
+          "description": "Security Code"
+        },
+        {
+          "field": "SECODE",
+          "description": "Security Internal ID"
+        },
+        {
+          "field": "CHGTYPE",
+          "description": "Trading Anomaly Type Code"
+        },
+        {
+          "field": "BIZSUNITCODE",
+          "description": "Business Unit Code"
+        },
+        {
+          "field": "BIZSUNITNAME",
+          "description": "Business Unit Name"
+        },
+        {
+          "field": "AMOUNT",
+          "description": "Aggregate Trading Amount"
+        },
+        {
+          "field": "BUYVOL",
+          "description": "Buy Volume"
+        },
+        {
+          "field": "BUYAMT",
+          "description": "Buy Amount"
+        },
+        {
+          "field": "SALEVOL",
+          "description": "Sell Volume"
+        },
+        {
+          "field": "SALEAMT",
+          "description": "Sell Amount"
+        },
+        {
+          "field": "MEMO",
+          "description": "Remarks"
+        },
+        {
+          "field": "ISVALID",
+          "description": "Validity Flag"
+        },
+        {
+          "field": "TMSTAMP",
+          "description": "System Timestamp"
+        },
+        {
+          "field": "ENTRYDATE",
+          "description": "Entry Date"
+        },
+        {
+          "field": "ENTRYTIME",
+          "description": "Entry Time"
+        },
+        {
+          "field": "TRANSDIR",
+          "description": "Ranking Direction Code"
+        },
+        {
+          "field": "EXCHANGE",
+          "description": "Exchange Code"
+        },
+        {
+          "field": "SETYPE",
+          "description": "Security Type Code"
+        },
+        {
+          "field": "STTYPE",
+          "description": "Stock Type Code"
+        },
+        {
+          "field": "BUYAMTRT",
+          "description": "Buy Amount Ratio"
+        },
+        {
+          "field": "SALEAMTRT",
+          "description": "Sell Amount Ratio"
+        },
+        {
+          "field": "TOTAMTRT",
+          "description": "Aggregate Trading Amount Ratio"
+        },
+        {
+          "field": "ISTOTCOUNT",
+          "description": "Total-Inclusion Flag"
+        },
+        {
+          "field": "SMEBTSTOCKID",
+          "description": "Listed-Security Record ID"
+        },
+        {
+          "field": "DATA_DOWNLOAD_TIME",
+          "description": "Data Download Time"
+        }
+      ],
+      "provider": "Southern Finance Omnimedia Corp."
+    },
+    "cd80_ipo": {
+      "name": "cd80_ipo",
+      "time_range": "1984.11–2026.09",
+      "source_url": "Table Name",
+      "description": "Field Name",
+      "fields": [
+        {
+          "field": "SESNAME",
+          "description": "Security Short Name"
+        },
+        {
+          "field": "ISSPUBDATE",
+          "description": "Prospectus Announcement Date"
+        },
+        {
+          "field": "ONLRDSHOWBEGDATE",
+          "description": "Online Roadshow Start Date"
+        },
+        {
+          "field": "INITENQUBEGDATE",
+          "description": "Initial Inquiry Start Date"
+        },
+        {
+          "field": "ONLSUBBEGDATE",
+          "description": "Online Subscription Start Date"
+        },
+        {
+          "field": "ONLSUBCODE",
+          "description": "Online Subscription Code"
+        },
+        {
+          "field": "ONLSUBSNAME",
+          "description": "Online Subscription Short Name"
+        },
+        {
+          "field": "ONLLOTWINRTPUBDATE",
+          "description": "Online Offering Lot Winning Rate Announcement Date"
+        },
+        {
+          "field": "ONLLOTWINERSTPUBDATE",
+          "description": "Online Lottery Results Announcement Date"
+        },
+        {
+          "field": "LISTDATE",
+          "description": "Listing Date"
+        },
+        {
+          "field": "PS_ISS_PRC",
+          "description": "Issue Price per Share"
+        },
+        {
+          "field": "DATA_DOWNLOAD_TIME",
+          "description": "Data Download Time"
+        }
+      ],
+      "provider": "Southern Finance Omnimedia Corp."
+    },
+    "cd80_limit_surge": {
+      "name": "cd80_limit_surge",
+      "time_range": "2026.04–2026.09",
+      "source_url": "Table Name",
+      "description": "Field Name",
+      "fields": [
+        {
+          "field": "id",
+          "description": "Record ID"
+        },
+        {
+          "field": "trade_date",
+          "description": "Trade Date"
+        },
+        {
+          "field": "code",
+          "description": "Security Code"
+        },
+        {
+          "field": "name",
+          "description": "Security Short Name"
+        },
+        {
+          "field": "timestamp",
+          "description": "Market Data Timestamp in Milliseconds"
+        },
+        {
+          "field": "localtime",
+          "description": "Local Receipt Timestamp in Milliseconds"
+        },
+        {
+          "field": "seq_no",
+          "description": "Sequence Number"
+        },
+        {
+          "field": "status",
+          "description": "Status Flag"
+        },
+        {
+          "field": "open",
+          "description": "Opening Price"
+        },
+        {
+          "field": "high",
+          "description": "High Price"
+        },
+        {
+          "field": "low",
+          "description": "Low Price"
+        },
+        {
+          "field": "price",
+          "description": "Latest Price"
+        },
+        {
+          "field": "close",
+          "description": "Closing Price"
+        },
+        {
+          "field": "amount",
+          "description": "Trading Amount"
+        },
+        {
+          "field": "circulating_mv",
+          "description": "Circulating Market Capitalization"
+        },
+        {
+          "field": "limit_up",
+          "description": "Upper Price Limit"
+        },
+        {
+          "field": "limit_down",
+          "description": "Lower Price Limit"
+        },
+        {
+          "field": "spread",
+          "description": "Price Change Rate"
+        },
+        {
+          "field": "price_spread",
+          "description": "Price Change Amount"
+        },
+        {
+          "field": "last_close",
+          "description": "Previous Closing Price"
+        },
+        {
+          "field": "create_time",
+          "description": "Record Creation Time"
+        },
+        {
+          "field": "update_time",
+          "description": "Record Update Time"
+        },
+        {
+          "field": "is_limit_up",
+          "description": "Limit-Up Flag"
+        },
+        {
+          "field": "limit_time",
+          "description": "Limit-Up Timestamp in Milliseconds"
+        }
+      ],
+      "provider": "Southern Finance Omnimedia Corp."
+    },
+    "cd80_limit_down": {
+      "name": "cd80_limit_down",
+      "time_range": "2026.09",
+      "source_url": "Table Name",
+      "description": "Field Name",
+      "fields": [
+        {
+          "field": "id",
+          "description": "Record ID"
+        },
+        {
+          "field": "trade_date",
+          "description": "Trade Date"
+        },
+        {
+          "field": "code",
+          "description": "Security Code"
+        },
+        {
+          "field": "name",
+          "description": "Security Short Name"
+        },
+        {
+          "field": "spe",
+          "description": "Static Price-to-Earnings Ratio"
+        },
+        {
+          "field": "pbr",
+          "description": "Price-to-Book Ratio"
+        },
+        {
+          "field": "pe",
+          "description": "Dynamic Price-to-Earnings Ratio"
+        },
+        {
+          "field": "amount",
+          "description": "Trading Amount"
+        },
+        {
+          "field": "open_price",
+          "description": "Opening Price"
+        },
+        {
+          "field": "total_value",
+          "description": "Total Market Capitalization"
+        },
+        {
+          "field": "change_rate",
+          "description": "Price Change Rate"
+        },
+        {
+          "field": "last_price",
+          "description": "Latest Price"
+        },
+        {
+          "field": "change",
+          "description": "Price Change Amount"
+        },
+        {
+          "field": "volume",
+          "description": "Trading Volume"
+        },
+        {
+          "field": "pre_close_price",
+          "description": "Previous Closing Price"
+        },
+        {
+          "field": "high_price",
+          "description": "High Price"
+        },
+        {
+          "field": "low_price",
+          "description": "Low Price"
+        },
+        {
+          "field": "limit_price",
+          "description": "Limit-Down Price"
+        },
+        {
+          "field": "create_time",
+          "description": "Record Creation Time"
+        },
+        {
+          "field": "update_time",
+          "description": "Record Update Time"
+        }
+      ],
+      "provider": "Southern Finance Omnimedia Corp."
+    }
+  }
+}

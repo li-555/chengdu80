@@ -1,0 +1,626 @@
+{
+  "schema_version": "0.2",
+  "note": "Prototype operation manifest, not official Blocks platform schema",
+  "tools": [
+    {
+      "name": "finance.performance",
+      "description": "历史风险绩效：收益、波动率、最大回撤、Sharpe",
+      "parameters": [
+        {
+          "name": "bars",
+          "required": true
+        },
+        {
+          "name": "risk_free_annual",
+          "required": false
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.technical_indicators",
+      "description": "价格技术指标：MA20/60、RSI14、MACD、ATR14、成交量倍数",
+      "parameters": [
+        {
+          "name": "bars",
+          "required": true
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.observation_signals",
+      "description": "收盘后技术观察：均线交叉、RSI、放量；不是买卖建议",
+      "parameters": [
+        {
+          "name": "bars",
+          "required": true
+        },
+        {
+          "name": "volume_multiplier",
+          "required": false
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.compare_stocks",
+      "description": "同日期窗口股票收益和历史风险比较",
+      "parameters": [
+        {
+          "name": "bars_by_code",
+          "required": true
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.valuation_snapshot",
+      "description": "估值快照：PE_TTM、PB，注明日期",
+      "parameters": [
+        {
+          "name": "daily_basic",
+          "required": true
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.price_threshold_signals",
+      "description": "收盘价阈值交叉观察信号（不是实时提醒）",
+      "parameters": [
+        {
+          "name": "bars",
+          "required": true
+        },
+        {
+          "name": "above",
+          "required": false
+        },
+        {
+          "name": "below",
+          "required": false
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.f10_cards",
+      "description": "依据披露日期的F10财务指标卡，防止未来信息泄漏",
+      "parameters": [
+        {
+          "name": "indicators",
+          "required": true
+        },
+        {
+          "name": "as_of",
+          "required": true
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.compare_fundamentals",
+      "description": "2–5股票基本面和估值对比，报告期校验",
+      "parameters": [
+        {
+          "name": "indicators",
+          "required": true
+        },
+        {
+          "name": "valuation",
+          "required": true
+        },
+        {
+          "name": "as_of",
+          "required": true
+        },
+        {
+          "name": "codes",
+          "required": true
+        },
+        {
+          "name": "metric_weights",
+          "required": false
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.announcement_watch",
+      "description": "公告标题关键词检索，必须提示非全文分析",
+      "parameters": [
+        {
+          "name": "announcements",
+          "required": true
+        },
+        {
+          "name": "as_of",
+          "required": true
+        },
+        {
+          "name": "codes",
+          "required": false
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.industry_membership",
+      "description": "行业成员查询，使用纳入/剔除日期",
+      "parameters": [
+        {
+          "name": "frame",
+          "required": true
+        },
+        {
+          "name": "as_of",
+          "required": true
+        },
+        {
+          "name": "level",
+          "required": false
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.portfolio_risk",
+      "description": "组合权重、集中度、相关性、历史波动、回撤",
+      "parameters": [
+        {
+          "name": "bars_by_code",
+          "required": true
+        },
+        {
+          "name": "weights",
+          "required": false
+        },
+        {
+          "name": "risk_free_annual",
+          "required": false
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.daily_briefing",
+      "description": "组合收盘后研究事实包，供LLM写报告",
+      "parameters": [
+        {
+          "name": "bars_by_code",
+          "required": true
+        },
+        {
+          "name": "as_of",
+          "required": true
+        },
+        {
+          "name": "document_events",
+          "required": false
+        },
+        {
+          "name": "max_events",
+          "required": false
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.macro_release",
+      "description": "宏观发布实际、前值、预期差比较，不编造预期",
+      "parameters": [
+        {
+          "name": "series_id",
+          "required": true
+        },
+        {
+          "name": "actual",
+          "required": true
+        },
+        {
+          "name": "prior",
+          "required": false
+        },
+        {
+          "name": "consensus",
+          "required": false
+        },
+        {
+          "name": "unit",
+          "required": false
+        },
+        {
+          "name": "published_at",
+          "required": false
+        },
+        {
+          "name": "source_url",
+          "required": false
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.technical_indicators_external",
+      "description": "第三方 pandas-ta-classic 的RSI/MACD/布林带",
+      "parameters": [
+        {
+          "name": "bars",
+          "required": true
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.performance_quantstats",
+      "description": "第三方 QuantStats 的 Sharpe/波动率/回撤",
+      "parameters": [
+        {
+          "name": "bars",
+          "required": true
+        },
+        {
+          "name": "risk_free_annual",
+          "required": false
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "ml.anomaly_isolation_forest",
+      "description": "机器学习历史异常检测；非收益预测/风险概率",
+      "parameters": [
+        {
+          "name": "bars",
+          "required": true
+        },
+        {
+          "name": "holdout_ratio",
+          "required": false
+        },
+        {
+          "name": "contamination",
+          "required": false
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "knowledge.search",
+      "description": "依据官方出处检索金融方法和资讯摘要",
+      "parameters": [
+        {
+          "name": "con",
+          "required": true
+        },
+        {
+          "name": "query",
+          "required": true
+        },
+        {
+          "name": "limit",
+          "required": false
+        },
+        {
+          "name": "topic",
+          "required": false
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.cash_earnings_quality",
+      "description": "按披露时间与报告期对齐，比较经营现金流与归母净利润",
+      "parameters": [
+        {
+          "name": "income",
+          "required": true
+        },
+        {
+          "name": "cashflow",
+          "required": true
+        },
+        {
+          "name": "as_of",
+          "required": true
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.top_holder_concentration",
+      "description": "前十大股东集中度，不能等同实控人",
+      "parameters": [
+        {
+          "name": "holdings",
+          "required": true
+        },
+        {
+          "name": "as_of",
+          "required": true
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.sma_rule_backtest",
+      "description": "均线信号下一交易日生效的历史策略模拟，含交易费假设",
+      "parameters": [
+        {
+          "name": "bars",
+          "required": true
+        },
+        {
+          "name": "fast",
+          "required": false
+        },
+        {
+          "name": "slow",
+          "required": false
+        },
+        {
+          "name": "transaction_cost_bps",
+          "required": false
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.industry_daily_breadth",
+      "description": "行业市场广度：上涨比例、中位收益、等权收益和成交额",
+      "parameters": [
+        {
+          "name": "daily",
+          "required": true
+        },
+        {
+          "name": "members",
+          "required": true
+        },
+        {
+          "name": "as_of",
+          "required": true
+        },
+        {
+          "name": "level",
+          "required": false
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.altman_em_z",
+      "description": "Altman 新兴市场 Z双撇：非金融企业偿债能力描述分数，不输出统一风险等级",
+      "parameters": [
+        {
+          "name": "balance",
+          "required": true
+        },
+        {
+          "name": "income",
+          "required": true
+        },
+        {
+          "name": "as_of",
+          "required": true
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.piotroski_f",
+      "description": "Piotroski 财务健康九信号；无增发数据则标记不完整；非舞弊模型",
+      "parameters": [
+        {
+          "name": "balance",
+          "required": true
+        },
+        {
+          "name": "income",
+          "required": true
+        },
+        {
+          "name": "cashflow",
+          "required": true
+        },
+        {
+          "name": "as_of",
+          "required": true
+        },
+        {
+          "name": "issuance_flags",
+          "required": false
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.accrual_quality",
+      "description": "净利润与经营现金流背离程度，以平均资产归一；明确变量口径",
+      "parameters": [
+        {
+          "name": "balance",
+          "required": true
+        },
+        {
+          "name": "income",
+          "required": true
+        },
+        {
+          "name": "cashflow",
+          "required": true
+        },
+        {
+          "name": "as_of",
+          "required": true
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "regguard.red_flag_rules",
+      "description": "待复核风险线索 R1/R2/R7，非违法或舞弊事实",
+      "parameters": [
+        {
+          "name": "balance",
+          "required": true
+        },
+        {
+          "name": "income",
+          "required": true
+        },
+        {
+          "name": "cashflow",
+          "required": true
+        },
+        {
+          "name": "as_of",
+          "required": true
+        },
+        {
+          "name": "cfo_ni_threshold",
+          "required": false
+        },
+        {
+          "name": "receivable_growth_gap",
+          "required": false
+        },
+        {
+          "name": "current_ratio_threshold",
+          "required": false
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "regguard.beneish_m",
+      "description": "Beneish 八因子财务操纵模式参考分数；未经 A 股校准，非舞弊概率",
+      "parameters": [
+        {
+          "name": "balance",
+          "required": true
+        },
+        {
+          "name": "income",
+          "required": true
+        },
+        {
+          "name": "cashflow",
+          "required": true
+        },
+        {
+          "name": "as_of",
+          "required": true
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "regguard.audit_title_triage",
+      "description": "公告标题级财报/审计/质押/司法线索筛选，不代表读取正文",
+      "parameters": [
+        {
+          "name": "filings",
+          "required": true
+        },
+        {
+          "name": "as_of",
+          "required": true
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "regguard.screen_accounting_v2",
+      "description": "研究规则R1/R2/R3/R4/R7/R11，明确标记不可计算的项目；非财务舞弊判定",
+      "parameters": [
+        {
+          "name": "balance",
+          "required": true
+        },
+        {
+          "name": "income",
+          "required": true
+        },
+        {
+          "name": "cashflow",
+          "required": true
+        },
+        {
+          "name": "as_of",
+          "required": true
+        },
+        {
+          "name": "cfo_ni_threshold",
+          "required": false
+        },
+        {
+          "name": "receivables_gap_threshold",
+          "required": false
+        },
+        {
+          "name": "other_receivables_threshold",
+          "required": false
+        },
+        {
+          "name": "current_ratio_threshold",
+          "required": false
+        },
+        {
+          "name": "consecutive_years",
+          "required": false
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    },
+    {
+      "name": "finance.compare_peer_scores",
+      "description": "同一行业、同一报告期且已披露的样本内金融评分百分位；至少8家且非概率",
+      "parameters": [
+        {
+          "name": "records",
+          "required": true
+        },
+        {
+          "name": "as_of",
+          "required": true
+        },
+        {
+          "name": "min_peers",
+          "required": false
+        }
+      ],
+      "schema_status": "prototype-signatures-not-formal-Blocks-spec",
+      "execute_environment": "restricted server operations only"
+    }
+  ]
+}

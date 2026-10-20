@@ -1,0 +1,19 @@
+{
+  "name": "RegGuard Financial Intelligence Capability Map",
+  "version": "2026-10-13-v1",
+  "source": "M2-Applications-Final-CRM.md, section 2.4; AlphaPilot V4; RegGuard 数据源与算法调用方案",
+  "assumptions": [
+    "Token rights require live verification; local spreadsheet is metadata only",
+    "Human legal review is mandatory for entity identity, regulatory interpretation and legal outcomes",
+    "Rules produce research flags only; no fraud probability"
+  ],
+  "features": [
+    {"m2_id":"2.4.1", "name":"财报与审计意见解读", "operations":["regguard.screen_financials","regguard.altman_em_z","regguard.piotroski_f","regguard.accrual_quality","regguard.audit_opinion_review"],"status":"partial_operational","not_ready":["full notes PDF extraction","real Tushare token permission validation"]},
+    {"m2_id":"2.4.2", "name":"财务异常与潜在舞弊线索", "operations":["regguard.screen_financials","regguard.beneish_m","regguard.peer_outlier_screen","regguard.compare_peer_scores"],"status":"partial_operational","not_ready":["A-share model calibration","fully evaluated R1-R12","supervised fraud classification"]},
+    {"m2_id":"2.4.3", "name":"实控人/董监高法律风险", "operations":["regguard.disclosed_ownership_graph","regguard.controller_legal_checklist","regguard.filing_event_triage"],"status":"manual_verification_workflow","not_ready":["auto court retrieval","fully verified beneficial ownership mapping"]},
+    {"m2_id":"2.4.4", "name":"监管风向追踪", "operations":["regguard.regulatory_change_tracker","regguard.classify_regulatory_topics"],"status":"supplied_snapshots_only","not_ready":["live regulator feed collection","legal applicability determination"]},
+    {"m2_id":"2.4.5", "name":"事件预警看板", "operations":["regguard.pledge_risk_review","regguard.audit_opinion_review","regguard.filing_event_triage","regguard.consolidate_alerts","regguard.build_digest"],"status":"offline_operational","not_ready":["Blocks scheduler","outbound notifications","real-time updates"]},
+    {"m2_id":"2.4.6", "name":"可审计调查工作流", "operations":["regguard.build_evidence_pack"],"platform_workflow":"regguard.workflow", "status":"local_demo_only","not_ready":["production identity","immutable audit log storage","approvals"]},
+    {"m2_id":"2.4.7", "name":"机构数据安全", "operations":["regguard.dataset_coverage"],"status":"platform_dependency","not_ready":["tenant isolation","deployment sandbox","role-based access"]}
+  ]
+}
